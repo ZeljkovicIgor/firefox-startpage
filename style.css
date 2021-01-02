@@ -1,0 +1,43 @@
+.main {
+    text-align: center;
+    width: 750px;
+    z-index: 2;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 40rem;
+}
+
+.main-link {
+    margin-right: 5rem;
+    color: #A3AAC8;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: 'Jura', sans-serif;
+}
+
+.main-link:hover {
+    color: #CFD0E2;
+    cursor: pointer;
+}
+
+.main-background {
+    width: 800px;
+    height: 300px;
+    background: #293048;
+    position: absolute;
+    top: 23rem;
+    left: 38rem;
+    z-index: 1;
+    opacity: 0.7;
+    border-radius: 30px;
+}
+
+.weather {
+    font-size: 40px;
+    font-family: 'Jura', sans-serif;
+    color: #A3AAC8;
+}
