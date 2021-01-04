@@ -1,22 +1,31 @@
-.main {
+body {
+    overflow: hidden;
+    font-family: 'Jura', sans-serif;
+}
+
+.main-table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 25rem;
+}
+
+.main-table {
     text-align: center;
-    width: 750px;
+    border: 1px solid #A3AAC8;
+    border-radius: 20px;
+    padding: 2rem;
     z-index: 2;
 }
 
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 40rem;
+.main-table td {
+    padding: 0 2rem 0 2rem;
 }
 
 .main-link {
-    margin-right: 5rem;
     color: #A3AAC8;
     text-decoration: none;
     font-size: 40px;
-    font-family: 'Jura', sans-serif;
 }
 
 .main-link:hover {
@@ -24,20 +33,19 @@
     cursor: pointer;
 }
 
-.main-background {
-    width: 800px;
-    height: 300px;
-    background: #293048;
-    position: absolute;
-    top: 23rem;
-    left: 38rem;
-    z-index: 1;
-    opacity: 0.7;
-    border-radius: 30px;
-}
-
 .weather {
     font-size: 40px;
     font-family: 'Jura', sans-serif;
     color: #A3AAC8;
+}
+
+.overlay {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100rem;
+    background-color: #293048;
+    opacity: 70%;
+    z-index: 1;
 }
