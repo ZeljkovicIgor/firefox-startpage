@@ -1,0 +1,751 @@
+[
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1609894972399,
+		"name": "coolors.co",
+		"sections": [
+			{
+				"code": "/*  Coolors sloppy dark theme   */\n\n:root {\n    --bg: #230007;\n    --bg-sec: #5A0002;\n    --prim-text: #D7CF07;\n    --sec-text: #D98324;\n    --accent: #A40606;\n}\n\nhtml,\n#header {\n    color: var(--prim-text) !important;\n    background-color: var(--bg) !important;\n}\n\nhtml,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np {\n    color: var(--prim-text) !important;\n}\n\n.st0 {\n    fill: var(--bg);\n}\n\n.link--secondary {\n    color: var(--sec-text);\n}\n\n.link--secondary.is-hover,\n.link--secondary:hover {\n    color: var(--sec-text);\n}\n\nhtml.no-touchevents #header-cad #header-cad_description {\n    color: var(--sec-text);\n}\n\nhtml.no-touchevents #header-cad #header-cad_company {\n    color: var(--sec-text);\n}\n\n#page-loader,\n#sticky-cad,\n.carbon-cad,\n.card-cad,\n.floating-cad {\n    background: var(--bg);\n}\n\n.spinner {\n    border-color: var(--accent) rgba(0, 0, 0, .1) rgba(0, 0, 0, .1);\n}\n\n#generator_spacebar-suggestion,\n.link--black {\n    color: var(--sec-text);\n}\n\n.sub-header {\n    background-color: var(--bg);\n}",
+				"domains": [
+					"coolors.co"
+				]
+			}
+		],
+		"updateDate": 1609895931689,
+		"_id": "f54d020a-7a83-40fc-8ebd-bb740571c82c",
+		"_rev": 1609895931689,
+		"id": 1
+	},
+	{
+		"enabled": true,
+		"updateUrl": "https://gitlab.com/RaitaroH/Stylus-DeepDark/raw/master/StylusDeepDark.user.css",
+		"md5Url": null,
+		"url": "https://gitlab.com/RaitaroH/Stylus-DeepDark",
+		"originalMd5": null,
+		"installDate": 1609894409350,
+		"sourceCode": "/* ==UserStyle==\n@name        Stylus DeepDark\n@namespace   gitlab.com/RaitaroH/Stylus-DeepDark\n@homepageURL https://gitlab.com/RaitaroH/Stylus-DeepDark\n@version     2.2.9\n@updateURL   https://gitlab.com/RaitaroH/Stylus-DeepDark/raw/master/StylusDeepDark.user.css\n@description Write thy themes in the dark. May the dark be kinder on thine eyes. (Stylus dark theme)\n@author      RaitaroH and contributors\n+co-authors  https://gitlab.com/RaitaroH/Stylus-DeepDark/graphs/contributors\n@license     GNU-V3.0\n\n@preprocessor stylus\n\n@var select stylus-deepdark-style \"Preset themes\" [\n  \"Deep-Dark\",\n  \"Inspired-Dark\",\n  \"Breeze-Dark\",\n  \"HavocOS\",\n  \"Arc-Dark\",\n  \"Adapta-Nokto\",\n  \"Adapta-Breath-Nokto\",\n  \"Gruvbox-Dark\",\n  \"Gruvbox-Light\",\n  \"NierAutomata-Dark\",\n  \"NierAutomata-Light\",\n  \"Solarized-Dark\",\n  \"Solarized-Light\",\n  \"Vertex-Dark\",\n  \"Mint-Y-Dark\",\n  \"9anime\",\n  \"Firefox-Dark\",\n  \"Firefox-57\",\n  \"Discord\",\n  \"YouTube-Dark\",\n  \"Black-and-White\",\n  \"Yellow\",\n  \"Yellow-2\",\n  \"Ubuntu-Grey\",\n  \"Ubuntu-Purple\",\n  \"Orange\",\n  \"Jisho\",\n  \"Custom\"\n]\n@var select colorRY \"Red/Yellow color\" [\n  \"Default\",\n  \"Solarized\",\n  \"Gruvbox Dark\",\n  \"Gruvbox Dark Intense\",\n  \"Gruvbox Light\",\n  \"Gruvbox Light Intense\",\n  \"Custom\"\n]\n@var color mainColor \"Custom main color\" \"#367bf0\"\n@var color mainBackground \"Custom main background\" \"#22242d\"\n@var color secondBackground \"Custom second background\" \"#242730\"\n@var color hoverBackground \"Custom hover background\" \"#4e5467\"\n@var color mainText \"Custom main text\" \"#eee\"\n@var color dimmerText \"Custom second text\" \"#ccc\"\n@var color editorBackground \"Custom editor background\" \"#2f343f\"\n@var color selectBackground \"Custom selection background\" \"#3c4150\"\n@var color colorShadow \"Custom shadow color\" \"rgba(56, 60, 74, .3)\"\n@var color colorEvenEntry \"Custom even color\" \"rgba(56, 60, 74, .4)\"\n@var color colorRed \"Custom red color\" \"#ff6666\"\n@var color colorYellow \"Custom yellow color\" \"#ffb266\"\n\n@var checkbox use-modified-default   \"Adaptive syntax highlighting\" 1\n@var checkbox stylus-syntax-theme    \"Stylus syntax highlighting\" 1\n@var checkbox support_update-problem \"Update problem tooltips\" 1\n@var checkbox wrap-lint-msgs         \"Wrap lint messages\" 1\n@var checkbox hide-scrollbar         \"Fix CM search scrollbar\" 0\n\n@var text custom_sidebar_width \"Sidebar width\" 280px\n@var text fontSize 'Editor font size' 12px\n@var select cursorWidth 'Cursor width' {\n  \"Slim 1px\": \"1px\",\n  \"Wider 2px\": \"2px\",\n  \"Wider+ 3px\": \"3px\",\n  \"Block 7px\": \"7px\"\n}\n@var select cursorColor \"Cursor color\" {\n  \"Deep-Dark\": \"#00adee\",\n  \"Inspired-Dark\": \"#5e8acc\",\n  \"Breeze-Dark\": \"#3daee9\",\n  \"Vertex-Dark\": \"#4080fb\",\n  \"Arc-Dark\": \"#5294E2\",\n  \"Firefox-Dark\": \"#5675B9\",\n  \"Firefox 57\": \"#4080fb\",\n  \"Discord\": \"#7289da\",\n  \"YouTube Dark\": \"#E52117\",\n  \"Mint-Y-Dark\": \"#9ab87c\",\n  \"9anime\": \"#723f8c\",\n  \"Black-and-White\": \"#fff\",\n  \"Yellow\": \"#ffc700\",\n  \"Yellow-2\": \"#ffc700\",\n  \"Ubuntu-Grey\": \"#ef7847\",\n  \"Ubuntu-Purple\": \"#ef7847\",\n  \"Orange\": \"#ff6905\",\n  \"Jisho\": \"#ef7d6c\",\n  \"Adapta-Nokto\": \"#00bcd4\",\n  \"Adapta-Breath Nokto\": \"#1abc9c\",\n  \"Solarized\": \"#268bd2\",\n  \"Gruvbox-Dark\": \"#fe8019\",\n  \"Gruvbox-Light\": \"#af3a03\",\n  \"NierAutomata-Dark\": \"#fe8019\",\n  \"NierAutomata-Light\": \"#fe8019\",\n  \"Custom\": \"custom-cursor-color\"\n}\n@var color custom-cursor-color \"Custom cursor color\" \"#04f911\"\n==/UserStyle== */\n@-moz-document regexp(\"moz-extension:\\/\\/.*\"), regexp(\"chrome-extension:\\/\\/.*\") {\n  /* Author     : Theme made by RaitaroH and contributors */\n  /* Co-authors : https://gitlab.com/RaitaroH/Stylus-DeepDark/graphs/contributors */\n  /* Home       : https://gitlab.com/RaitaroH/Stylus-DeepDark */\n  /* Licence    : GNU General Public License v3.0 */\n  /* Version    : 2.2.9 (2020-07-26) */\n  /* Main color variables */\n  /* stylelint-disable */\n  :root {\n    if stylus-deepdark-style == \"Deep-Dark\" {\n      --main-color: #00adee;\n      --main-background: #111;\n      --second-background: #181818;\n      --hover-background: #232323;\n      --main-text: #eff0f1;\n      --dimmer-text: #ccc;\n      --editor-background: #181818;\n      --select-background: #232323;\n      --shadow: 0 1px .5px rgba(0, 0, 0, .3);\n      --even-entry-background: rgba(0, 0, 0, .6);\n    }\n    else if stylus-deepdark-style == \"Inspired-Dark\" {\n      --main-color: #5e8acc;\n      --main-background: #232629;\n      --second-background: #181818;\n      --hover-background: #515254;\n      --main-text: #eee;\n      --dimmer-text: #ccc;\n      --editor-background: #181818;\n      --select-background: #232323;\n      --shadow: 0 1px .5px rgba(0, 0, 0, .13);\n      --even-entry-background: rgba(0, 0, 0, .16);\n    }\n    else if stylus-deepdark-style == \"Breeze-Dark\" {\n      --main-color: #3daee9;\n      --main-background: #232629;\n      --second-background: #2a2e32;\n      --hover-background: #31363b;\n      --main-text: #eff0f1;\n      --dimmer-text: #bdc3c7;\n      --editor-background: #2a2e32;\n      --select-background: #31363b;\n      --shadow: 0 1px .5px rgba(0, 0, 0, .13);\n      --even-entry-background: rgba(0, 0, 0, .16);\n    }\n    else if stylus-deepdark-style == \"Vertex-Dark\" {\n      --main-color: #4080fb;\n      --main-background: #2b2b2c;\n      --second-background: #353638;\n      --hover-background: #515254;\n      --main-text: #f3f3f5;\n      --dimmer-text: #aeafb0;\n      --editor-background: #2b2b2c;\n      --select-background: #515254;\n      --shadow: 0 1px .5px rgba(0, 0, 0, .13);\n      --even-entry-background: rgba(0, 0, 0, .2);\n    }\n    else if stylus-deepdark-style == \"Arc-Dark\" {\n      --main-color: #5294e2;\n      --main-background: #343944;\n      --second-background: #383c4a;\n      --hover-background: #414a59;\n      --main-text: #c1c8d1;\n      --dimmer-text: #b3bac5;\n      --editor-background: #343944;\n      --select-background: #414a59;\n      --shadow: 0 1px .5px rgba(0, 0, 0, .13);\n      --even-entry-background: rgba(0, 0, 0, .16);\n    }\n    else if stylus-deepdark-style == \"Firefox-Dark\" {\n      --main-color: #5675b9;\n      --main-background: #272b35;\n      --second-background: #181d20;\n      --hover-background: #353a44;\n      --main-text: #e3eef9;\n      --dimmer-text: #bec0cc;\n      --editor-background: #181d20;\n      --select-background: #353a44;\n      --shadow: 0 1px .5px rgba(0, 0, 0, .13);\n      --even-entry-background: rgba(0, 0, 0, .16);\n    }\n    else if stylus-deepdark-style == \"Firefox-57\" {\n      --main-color: #4080fb;\n      --main-background: #0c0c0d;\n      --second-background: #252526;\n      --hover-background: #323234;\n      --main-text: #f9f9fa;\n      --dimmer-text: #d0d0d0;\n      --editor-background: #252526;\n      --select-background: #323234;\n      --shadow: 0 1px .5px rgba(54, 54, 54, .2);\n      --even-entry-background: rgba(54, 54, 54, .4);\n    }\n    else if stylus-deepdark-style == \"Discord\" {\n      --main-color: #7289da;\n      --main-background: #1e2124;\n      --second-background: #2f3136;\n      --hover-background: #484b51;\n      --main-text: #fff;\n      --dimmer-text: #ada8aa;\n      --editor-background: #2f3136;\n      --select-background: #484b51;\n      --shadow: 0 1px .5px rgba(47, 49, 54, .23);\n      --even-entry-background: rgba(47, 49, 54, .49);\n    }\n    else if stylus-deepdark-style == \"YouTube-Dark\" {\n      --main-color: #e52117;\n      --main-background: #111;\n      --second-background: #232323;\n      --hover-background: #343434;\n      --main-text: #e1e1e1;\n      --dimmer-text: #7f7f7f;\n      --editor-background: #111;\n      --select-background: #343434;\n      --shadow: 0 1px .5px rgba(54, 54, 54, .2);\n      --even-entry-background: rgba(54, 54, 54, .4);\n    }\n    else if stylus-deepdark-style == \"Mint-Y-Dark\" {\n      --main-color: #9ab87c;\n      --main-background: #2f2f2f;\n      --second-background: #383838;\n      --hover-background: #404040;\n      --main-text: #fff;\n      --dimmer-text: #d5dada;\n      --editor-background: #2f2f2f;\n      --select-background: #404040;\n      --shadow: 0 1px .5px rgba(0, 0, 0, .13);\n      --even-entry-background: rgba(0, 0, 0, .23);\n    }\n    else if stylus-deepdark-style == \"9anime\" {\n      --main-color: #723f8c;\n      --main-background: #0b0a0d;\n      --second-background: #17151c;\n      --hover-background: #1e1c25;\n      --main-text: #f9f6fb;\n      --dimmer-text: #cac0cf;\n      --editor-background: #17151c;\n      --select-background: rgba(180, 180, 180, .1);\n      --shadow: 0 1px .5px rgba(54, 54, 54, .13);\n      --even-entry-background: rgba(54, 54, 54, .36);\n    }\n    else if stylus-deepdark-style == \"Black-and-White\" {\n      --main-color: #fff;\n      --main-background: #000;\n      --second-background: #1e1e1e;\n      --hover-background: #313131;\n      --main-text: #fff;\n      --dimmer-text: #aaa;\n      --editor-background: #0a0a0a;\n      --select-background: #222;\n      --shadow: 0 1px .5px rgba(54, 54, 54, .2);\n      --even-entry-background: rgba(54, 54, 54, .4);\n    }\n    else if stylus-deepdark-style == \"Yellow\" {\n      --main-color: #ffc700;\n      --main-background: #141414;\n      --second-background: #202222;\n      --hover-background: #353838;\n      --main-text: #eff0f1;\n      --dimmer-text: #9f9999;\n      --editor-background: #202222;\n      --select-background: #353838;\n      --shadow: 0 1px .5px rgba(34, 34, 34, .2);\n      --even-entry-background: rgba(34, 34, 34, 1);\n    }\n    else if stylus-deepdark-style == \"Yellow-2\" {\n      --main-color: #ffc700;\n      --main-background: #0a0800;\n      --second-background: #0c0a04;\n      --hover-background: #0f0d05;\n      --main-text: #fffdf5;\n      --dimmer-text: #fff8e1;\n      --editor-background: rgba(12, 10, 4, .2);\n      --select-background: rgba(255, 253, 245, .1);\n      --shadow: 0 1px .5px rgba(34, 34, 34, .2);\n      --even-entry-background: rgba(34, 34, 34, 1);\n    }\n    else if stylus-deepdark-style == \"Ubuntu-Grey\" {\n      --main-color: #ef7847;\n      --main-background: #312d2a;\n      --second-background: #3d3c38;\n      --hover-background: #59564d;\n      --main-text: #f2f1ef;\n      --dimmer-text: #e6e5e3;\n      --editor-background: #312d2a;\n      --select-background: #59564d;\n      --shadow: 0 1px .5px rgba(89, 86, 77, .12);\n      --even-entry-background: rgba(89, 86, 77, .21);\n    }\n    else if stylus-deepdark-style == \"Ubuntu-Purple\" {\n      --main-color: #ef7847;\n      --main-background: #2c071a;\n      --second-background: #430b28;\n      --hover-background: #520d30;\n      --main-text: #f2f1ef;\n      --dimmer-text: #e6e5e3;\n      --editor-background: #430b28;\n      --select-background: #520d30;\n      --shadow: 0 1px .5px rgba(82, 13, 48, .2);\n      --even-entry-background: rgba(82, 13, 48, .5);\n    }\n    else if stylus-deepdark-style == \"Orange\" {\n      --main-color: #ff6905;\n      --main-background: #0a0400;\n      --second-background: #0e0702;\n      --hover-background: #110903;\n      --main-text: #fff9f5;\n      --dimmer-text: #ffede1;\n      --editor-background: #110903;\n      --select-background: #47250a;\n      --shadow: 0 1px .5px rgba(255, 105, 5, .1);\n      --even-entry-background: rgba(255, 105, 5, .1);\n    }\n    else if stylus-deepdark-style == \"Jisho\" {\n      --main-color: #ef7d6c;\n      --main-background: #322;\n      --second-background: #2a1b1b;\n      --hover-background: #863b2f;\n      --main-text: #efb26c;\n      --dimmer-text: #986e3f;\n      --editor-background: #2a1b1b;\n      --select-background: #863b2f;\n      --shadow: 0 1px .5px rgba(37, 19, 5, .19);\n      --even-entry-background: rgba(37, 19, 5, .29);\n    }\n    else if stylus-deepdark-style == \"Adapta-Nokto\" {\n      --main-color: #00bcd4;\n      --main-background: #222d32;\n      --second-background: #263238;\n      --hover-background: #2a353b;\n      --main-text: #fff;\n      --dimmer-text: #9b9b9b;\n      --editor-background: #263238;\n      --select-background: #3d4d56;\n      --shadow: 0 1px .5px rgba(61, 77, 86, .2);\n      --even-entry-background: rgba(61, 77, 86, .3);\n    }\n    else if stylus-deepdark-style == \"Adapta-Breath-Nokto\" {\n      --main-color: #1abc9c;\n      --main-background: #222d32;\n      --second-background: #263238;\n      --hover-background: #2a353b;\n      --main-text: #fff;\n      --dimmer-text: #9b9b9b;\n      --editor-background: #263238;\n      --select-background: #2a353b;\n      --shadow: 0 1px .5px rgba(42, 53, 59, .32);\n      --even-entry-background: rgba(42, 53, 59, .62);\n    }\n    else if stylus-deepdark-style == \"Solarized-Dark\" {\n      --main-color: #268bd2;\n      --main-background: #073642;\n      --second-background: #03303c;\n      --hover-background: #002b36;\n      --main-text: #fdf6e3;\n      --dimmer-text: #eee8d5;\n      --editor-background: #073642;\n      --select-background: #002b36;\n      --shadow: 0 1px .5px rgba(0, 43, 54, .3);\n      --even-entry-background: rgba(0, 43, 54, .5);\n    }\n    else if stylus-deepdark-style == \"Solarized-Light\" {\n      --main-color: #268bd2;\n      --main-background: #fdf6e3;\n      --second-background: #f5efdc;\n      --hover-background: #eee8d5;\n      --main-text: #073642;\n      --dimmer-text: #586e75;\n      --editor-background: #f5efdc;\n      --select-background: #ded8c4;\n      --shadow: 0 1px .5px rgba(222, 216, 196, .2);\n      --even-entry-background: rgba(222, 216, 196, .3);\n    }\n    else if stylus-deepdark-style == \"Gruvbox-Dark\" {\n      --main-color: #fe8019;\n      --main-background: #1d2021;\n      --second-background: #282828;\n      --hover-background: #3c3836;\n      --main-text: #fbf1c7;\n      --dimmer-text: #ebdbb2;\n      --editor-background: #282828;\n      --select-background: #3c3836;\n      --shadow: 0 1px .5px rgba(60, 56, 54, .22);\n      --even-entry-background: rgba(60, 56, 54, .33);\n    }\n    else if stylus-deepdark-style == \"Gruvbox-Light\" {\n      --main-color: #af3a03;\n      --main-background: #f9f5d7;\n      --second-background: #fbf1c7;\n      --hover-background: #ebdbb2;\n      --main-text: #282828;\n      --dimmer-text: #3c3836;\n      --editor-background: #f9f5d7;\n      --select-background: #ebdbb2;\n      --shadow: 0 1px .5px rgba(235, 219, 178, .33);\n      --even-entry-background: rgba(235, 219, 178, .36);\n    }\n    else if stylus-deepdark-style == \"NierAutomata-Dark\" {\n      --main-color: #fe8019;\n      --main-background: #33302a;\n      --second-background: #48453c;\n      --hover-background: #7c6f64;\n      --main-text: #dad4bb;\n      --dimmer-text: #bab5a1;\n      --editor-background: #33302a;\n      --select-background: #7c6f64;\n      --shadow: 0 1px .5px rgba(124, 111, 100, .15);\n      --even-entry-background: rgba(124, 111, 100, .21);\n    }\n    else if stylus-deepdark-style == \"NierAutomata-Light\" {\n      --main-color: #fe8019;\n      --main-background: #d1cdb7;\n      --second-background: #dcd8c0;\n      --hover-background: #bab5a1;\n      --main-text: #48453c;\n      --dimmer-text: #33302a;\n      --editor-background: #dcd8c0;\n      --select-background: #bab5a1;\n      --shadow: 0 1px .5px rgba(186, 181, 161, 2);\n      --even-entry-background: rgba(186, 181, 161, .3);\n    }\n    else if stylus-deepdark-style == \"HavocOS\" {\n      --main-color: #0794d4;\n      --main-background: #141618;\n      --second-background: #1c1e20;\n      --hover-background: #212528;\n      --main-text: #fff;\n      --dimmer-text: #b9baba;\n      --editor-background: #1c1e20;\n      --select-background: #212528;\n      --shadow: 0 1px .5px rgba(185, 186, 186, .04);\n      --even-entry-background: rgba(185, 186, 186, .05);\n    }\n    else if stylus-deepdark-style == \"Custom\" {\n      --main-color: mainColor;\n      --main-background: mainBackground;\n      --second-background: secondBackground;\n      --hover-background: hoverBackground;\n      --main-text: mainText;\n      --dimmer-text: dimmerText;\n      --editor-background: editorBackground;\n      --select-background: selectBackground;\n      --shadow: 0 1px .5px colorShadow;\n      --even-entry-background: colorEvenEntry;\n    }\n    /* CodeMirror font size */\n    --font-size: fontSize;\n    /* Cursor width and color */\n    --cursor-width: cursorWidth;\n    --cursor-color: cursorColor;\n    --sidebar_width: custom_sidebar_width;\n    /* These are must have static colors */\n    /* Disable all color/warning Breeze Dark */\n    if colorRY == \"Default\" {\n      --red: #da4453;\n      --yellow: #fdbc4b;\n    }\n    if colorRY == \"Solarized\" {\n      --red: #dc322f;\n      --yellow: #b58900;\n    }\n    if colorRY == \"Gruvbox Dark\" {\n      --red: #cc241d;\n      --yellow: #d79921;\n    }\n    if colorRY == \"Gruvbox Dark Intense\" {\n      --red: #fb4934;\n      --yellow: #fabd2f;\n    }\n    if colorRY == \"Gruvbox Light\" {\n      --red: #cc241d;\n      --yellow: #d79921;\n    }\n    if colorRY == \"Gruvbox Light Intense\" {\n      --red: #9d0006;\n      --yellow: #b57614;\n    }\n    if colorRY == \"Custom\" {\n      --red: colorRed;\n      --yellow: colorYellow;\n    }\n    --warning-disable-all: var(--red);\n    /* No match regex color from Breeze Dark */\n    /* added for easy change with swicher */\n    --no-match: var(--yellow);\n  }\n  /* stylelint-enable */\n  html {\n    text-rendering: optimizeLegibility !important;\n    -webkit-font-smoothing: antialiased !important;\n  }\n  body, #options-title {\n    border-color: var(--hover-background);\n  }\n  html.newUI .entry.even, .keymap-list > tbody > tr:nth-child(even),\n  #stylus-manage [id*=\"style-\"].entry.even {\n    background-color: var(--even-entry-background) !important;\n  }\n  #hotkey-info mark {\n    background: var(--main-background) !important;\n    border: 1px solid var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  #hotkey-info[data-active], #hotkey-info > div {\n    background: var(--main-background) !important;\n    border: 1px solid var(--second-background) !important;\n  }\n  #stylus-edit, body, html, #notes, #header, #actions {\n    background-color: var(--main-background) !important;\n    color: var(--dimmer-text) !important;\n  }\n  a, a:visited, .style-name-link {\n    color: var(--main-color) !important;\n    opacity: .9;\n  }\n  /* fix tab navigation hovering */\n  a:hover, .style-name-link:hover, a:focus-within,\n  .style-name-link:focus-within, h2:focus-within .style-name-link,\n  .entry:hover .style-name-link, .style-name-link a.delete:hover,\n  .style-name-link a.homepage:hover {\n    opacity: 1;\n    filter: brightness(115%) !important;\n  }\n\n  .disabled h2::after, .search-result, .search-result-meta, .entry.usercss .style-name-link::after {\n    background-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  .entry.usercss .style-name-link::after {\n    color: var(--main-color) !important;\n  }\n  /* fix tab naviagation hovering */\n  .disabled h2:focus-within .style-name-link, .entry.disabled:hover .style-name-link {\n    opacity: .8;\n  }\n\n  #filters label:hover, #filters .filter-selection:hover,\n  #filters label:hover select, #filters .filter-selection:hover select,\n  #filters .filter-selection:focus-within select {\n    background-color: transparent !important;\n    color: var(--main-color) !important;\n  }\n  #filters label:hover .svg-icon.select-arrow, #filters .filter-selection:hover .svg-icon.select-arrow {\n    fill: var(--main-color) !important;\n  }\n  select, .svg-icon.select-arrow {\n    transition: none !important;\n  }\n\n  /* This .entry selector affects the old UI layout and also affects popup\n   * Popup entries all align consistently like this. Old UI is also good.\n   */\n  .entry {\n    border-color: var(--second-background) !important;\n    box-shadow: inset 0 1px 0 0 var(--second-background) !important;\n  }\n  .newUI .entry .style-name:hover::before {\n    filter: grayscale(1);\n  }\n\n  #header {\n    width: var(--sidebar_width) !important;\n  }\n  #header {\n    border-right: 1px solid var(--hover-background) !important;\n  }\n  #header h1 {\n    color: var(--main-text) !important;\n  }\n  #header summary:hover h2, #header summary h2:hover {\n    color: var(--main-color) !important;\n  }\n  #header summary:hover h2, #search-replace-dialog [data-action=\"case\"][data-enabled]::after {\n    border-color: var(--main-color) !important;\n  }\n  [lang*=\"en-\"] #linter-label {\n    white-space: nowrap !important;\n  }\n\n  .resize-grip {\n    background-color: var(--hover-background) !important;\n    border-color: var(--main-background) !important;\n  }\n  .CodeMirror {\n    border: 1px solid var(--hover-background);\n  }\n  .CodeMirror-scrollbar-filler {\n    background: var(--even-entry-background) !important;\n  }\n  /* fix wrong background color when CodeMirror is empty */\n  .CodeMirror-focused, .CodeMirror-active {\n    outline: 1px auto var(--main-color);\n  }\n\n  /* Changed text highlight */\n  ::selection {\n    background: var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  ::-moz-selection {\n    background: var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  ::-webkit-selection {\n    background: var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  ::placeholder {\n    color: var(--dimmer-text) !important;\n    opacity: .5;\n  }\n  ::-webkit-input-placeholder {\n    color: var(--dimmer-text) !important;\n    opacity: .5;\n  }\n  ::-moz-placeholder {\n    color: var(--dimmer-text) !important;\n    opacity: .5;\n  }\n\n  if (!(stylus-syntax-theme)) {\n    .CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection,\n    .CodeMirror-line > span > span::-moz-selection, .CodeMirror-selected,\n    .CodeMirror-focused .CodeMirror-selected, .CodeMirror-activeline-background {\n      background-color: var(--select-background) !important;\n    }\n    .CodeMirror, .CodeMirror-code, .CodeMirror-code {\n      color: var(--main-text) !important;\n      background: var(--editor-background) !important;\n    }\n    .cm-s-mbo.CodeMirror {\n      background-color: var(--second-background) !important;\n    }\n    .CodeMirror-gutters {\n      background-color: var(--hover-background) !important;\n    }\n    .CodeMirror .cm-meta {\n      background: var(--hover-background) !important;\n    }\n  }\n\n  /* dont uncomment anything below */\n  .CodeMirror, .CodeMirror-hints {\n    font-family: \"Monaco\", \"Menlo\", \"Ubuntu Mono\", \"Consolas\", \"source-code-pro\", monospace !important;\n    font-size: var(--font-size) !important;\n  }\n  .CodeMirror-lint-tooltip {\n    background-color: var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  .CodeMirror-hint {\n    background-color: var(--main-background);\n  }\n\n  /* fix the bracket matching actually working */\n  div.CodeMirror span.CodeMirror-matchingbracket {\n    color: var(--main-color) !important;\n    -webkit-text-fill-color: var(--main-color) !important;\n    font-weight: 900 !important;\n    outline: 0 !important;\n  }\n  div.CodeMirror span.CodeMirror-nonmatchingbracket {\n    color: var(--warning-disable-all) !important;\n    -webkit-text-fill-color: var(--warning-disable-all) !important;\n    font-weight: 900 !important;\n  }\n  .CodeMirror-foldmarker {\n    color: var(--main-text) !important;\n    text-shadow: none !important;\n    font-size: 18px !important;\n  }\n\n  /* Cursor width and color setting implementation */\n  if cursorColor || cursorWidth {\n    .CodeMirror div.CodeMirror-cursor {\n      border-left-width: var(--cursor-width) !important;\n      border-color: var(--cursor-color) !important;\n    }\n  }\n\n  /* Popup */\n  .main-controls, .entry, .firefox body, #help-popup .title {\n    background-color: var(--main-background) !important;\n  }\n  #help-popup {\n    background-color: var(--second-background) !important;\n  }\n  #confirm > div, .menu-items-wrapper {\n    background-color: var(--second-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n\n  /* Icons */\n  .svg-icon, .svg-icon.info, .newUI .entry .svg-icon {\n    fill: var(--main-text) !important;\n  }\n  .svg-icon.info:hover, .svg-icon:hover, a:hover .svg-icon,\n  .newUI .entry:hover .svg-icon:hover, .svg-icon.checked,\n  a.homepage:focus-within .svg-icon, a.delete:focus-within .svg-icon,\n  a.check-update:focus-within .svg-icon, a.configure-usercss:focus-within .svg-icon,\n  a:focus-within .svg-icon {\n    fill: var(--main-color) !important;\n  }\n  .newUI .can-update[data-details$=\"locally edited\"] .update svg,\n  .newUI .update-problem .check-update svg {\n    fill: var(--warning-disable-all) !important;\n  }\n  /* these entries works as intended */\n  .newUI .entry.can-update[data-error=\"may be locally edited\"] .update::after,\n  .newUI .entry[data-error=\"locally edited\"] .update::after {\n    background: var(--second-background) !important;\n    border-color: var(--warning-disable-all) !important;\n    color: var(--warning-disable-all) !important;\n  }\n  .newUI .no-update:not(.update-problem):not(.update-done) .up-to-date::after,\n  .newUI .update:not(.update-problem) .update-done .up-to-date::after,\n  .newUI .entry .updated[title=\"Update completed.\"]::after,\n  .newUI .entry .update[title=\"Install update\"]::after {\n    background-color: var(--second-background) !important;\n    border-color: var(--main-color) !important;\n    color: var(--main-color) !important;\n  }\n\n  /* History */\n  #message-box-title, #message-box-buttons {\n    background-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  #message-box-contents {\n    background-color: var(--second-background) !important;\n  }\n  #message-box-close-icon .svg-icon {\n    fill: var(--dimmer-text) !important;\n  }\n  #message-box-close-icon:hover .svg-icon {\n    fill: var(--main-color) !important;\n  }\n\n  .help-text mark {\n    background: var(--hover-background) !important;\n    border: 1px solid var(--even-entry-background) !important;\n  }\n\n  /* Update warning */\n  .newUI .updater-icons > :not(.check-update)::after {\n    background-color: var(--hover-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n  if support_update-problem {\n    .newUI .update-problem .check-update::after {\n      content: attr(title);\n      position: absolute;\n      margin-top: 18px;\n      margin-left: -36px;\n      padding: 1ex 1.5ex;\n      border-radius: 4px;\n      animation: fadeout 10s;\n      animation-fill-mode: both;\n      background: var(--second-background);\n      border: 1px solid var(--warning-disable-all);\n      color: var(--warning-disable-all);\n    }\n  }\n  if wrap-lint-msgs {\n    #lint td[role=\"message\"] {\n      white-space: pre-wrap;\n    }\n  }\n  /* Install warning */\n  .warnings {\n    background-color: var(--hover-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n\n  #filters.active, .active #filters-stats {\n    background-color: var(--hover-background);\n    border-color: var(--main-color);\n    color: var(--main-text);\n  }\n\n  body.all-styles-hidden-by-filters::before, body.all-styles-hidden-by-filters::after {\n    color: var(--main-color) !important;\n    opacity: .5;\n  }\n\n  /* List of matching opened tabs */\n  .regexp-report details[data-type=\"full\"] {\n    color: var(--main-color) !important;\n  }\n  .regexp-report details[data-type=\"none\"] {\n    color: var(--no-match) !important;\n  }\n  .regexp-report details[data-type=\"invalid\"] {\n    color: var(--warning-disable-all) !important;\n  }\n\n  /* Text fields */\n  option[disabled] {\n    color: var(--hover-background) !important;\n  }\n  select {\n    background-color: var(--second-background) !important;\n    color: var(--main-text) !important;\n    border-color: var(--hover-background) !important;\n  }\n  select:hover {\n    border-color: var(--main-color) !important;\n    color: var(--main-color) !important;\n  }\n  #name, .applies-to li .applies-value, #search, .keymap-list input,\n  #sort-select, .sorter-selection select,\n  body#stylus-options #message-box input {\n    background-color: var(--hover-background) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  input:not([type]), #search, #sort-select, .sorter-selection select,\n  body#stylus-options #message-box input, .applies-to label {\n    color: var(--main-text) !important;\n  }\n  #name:hover, .applies-to li .applies-value:hover, #search:hover,\n  .keymap-list input:hover, #name:active, .applies-to li .applies-value:active,\n  #search:active, .keymap-list input:active, #name:focus,\n  .applies-to li .applies-value:focus, #search:focus, .keymap-list input:focus,\n  body#stylus-options #message-box input:not(:invalid):focus,\n  body#stylus-options #message-box input:not(:invalid):hover {\n    border: 1px solid var(--main-color) !important;\n  }\n\n  /* Stylus popup fixes\n   * Use opacity to solve disabled entries see #18 thx Mottie :) */\n  #stylus-popup .disabled .style-name {\n    opacity: .7;\n  }\n  /* Revert opacity here else the hover will also be dimmer. */\n  #stylus-popup .entry:hover .style-name, #stylus-popup .disabled:hover .style-name, a.expander {\n    color: var(--main-text) !important;\n    opacity: 1;\n  }\n  #stylus-popup #installed .entry:nth-child(even) .main-controls, #stylus-popup #installed .entry:nth-child(even) {\n    background-color: var(--even-entry-background) !important;\n    box-shadow: none !important;\n  }\n  /* Thx Mottie for solution see #18 */\n  #installed .entry.disabled:focus-within .style-name, #installed .entry:focus-within .style-name {\n    color: var(--main-text) !important;\n  }\n  /* prevent sliders from breaking in usercss config */\n  #message-box input.slider {\n    background: none !important;\n    border: 0 !important;\n  }\n  /* resize FF color swatch in Stylus options - similar to G-Chrome */\n  @supports (-moz-appearance: none) {\n    input[type=\"color\"] {\n      padding: 2px 4px !important;\n    }\n  }\n  /* resize G-Chrome color swatch in Stylus options new chrome versions are squished */\n  input[type=\"color\"]:not(*:root) {\n    padding: 0;\n    height: 28px;\n  }\n  /* add option color swatch hover/focus-within style to clearly indicate editable field */\n  input[type=\"color\"]:hover, .color-swatch:hover,\n  input[type=\"color\"]:focus-within, .color-swatch:focus-within {\n    outline: 1px solid var(--main-color) !important;\n  }\n  /* style the confirm delete popup border-color as red to show this is a danger area */\n  #stylus-popup #confirm div {\n    border-color: var(--red) !important;\n  }\n\n  /* editor line tweak */\n  #sections > div:not(:first-of-type) {\n    border-top: 2px solid var(--second-background) !important;\n  }\n\n  /* Buttons */\n  button, .remove-applies-to, .add-applies-to, #backup-buttons .dropdown-content a {\n    transition: color .25s, border-color .25s;\n    transition: background-color .25s, border-color .25s;\n  }\n  #save-button, #beautify, #cancel-button, #from-mozilla, #to-mozilla,\n  #editor\\.keyMap, #editor\\.theme, #editor\\.matchHighlight,\n  .applies-type.style-contributor, .add-section, .beautify-section,\n  .test-regexp, .remove-applies-to, .add-applies-to, #check-all-updates,\n  #add-style-label, #manage-options-button, button, #manage\\.newUI\\.targets,\n  #badgeNormal, #badgeDisabled, #updateInterval, #popupWidth,\n  #editor\\.linter, #options button, #manage\\.newUI\\.sort,\n  #message-box-contents select, a.remove-applies-to, a.add-applies-to {\n    background-color: var(--second-background) !important;\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  #backup-buttons .dropdown-content, #unfile-all-styles, #file-all-styles,\n  #sync-dropbox-import, #sync-dropbox-export {\n    background: var(--second-background) !important;\n    color: var(--main-text) !important;\n  }\n  #backup-buttons .dropdown-content a:hover, #unfile-all-styles:hover,\n  #file-all-styles:hover, #sync-dropbox-import:hover,\n  #file-all-styles:hover, #unfile-all-styles:hover, #options {\n    background: var(--main-background) !important;\n  }\n  #sync-dropbox-import:hover, #sync-dropbox-export:hover,\n  #file-all-styles:hover, #unfile-all-styles:hover, #file-all-styles:hover,\n  #options .option label:focus-within, #newUIoptions div label:hover,\n  #newUIoptions div label:focus-within, #options label:focus-within span,\n  #options input:focus-within, #options label span:hover {\n    color: var(--main-color) !important;\n  }\n  #save-button:hover, #beautify:hover, #cancel-button:hover,\n  #from-mozilla:hover, #to-mozilla:hover, #editor\\.keyMap:hover,\n  #editor\\.theme:hover, #editor\\.matchHighlight:hover,\n  .applies-type.style-contributor:hover, .add-section:hover,\n  .beautify-section:hover, .test-regexp:hover, .remove-applies-to:hover,\n  .add-applies-to:hover, option:hover, #check-all-updates:hover,\n  button#add-style-label:hover, #manage-options-button:hover, button:hover,\n  #manage\\.newUI\\.targets:hover, #updateInterval:hover, #popupWidth:hover,\n  #editor\\.linter:hover, #options button:hover, #manage\\.newUI\\.sort:hover,\n  #message-box-contents select:hover, a.remove-applies-to:hover,\n  #stylus-popup #popup-manage-button:focus-within, a.add-applies-to:hover,\n  #stylus-popup #popup-options-button:focus-within,\n  #stylus-popup #popup-wiki-button:focus-within,\n  #header button#save-button:focus-within, #header button#beautify:focus-within,\n  #header button#cancel-button:focus-within, #header button:focus-within,\n  #manage\\.newUI\\.sort:focus-within, a#find-editor-styles:focus-within button,\n  #check-all-updates:focus-within,\n  a[href=\"edit.html\"]:focus-within button#add-style-label {\n    color: var(--main-color) !important;\n    border: 1px solid var(--main-color) !important;\n  }\n  #stylus .options-column .option input#editor\\.tabSize:focus-within,\n  #stylus .options-column .option select:focus-within,\n  #stylus #options label:focus-within input[type=\"number\"],\n  #stylus #options [type=\"button\"]:focus-within {\n    border: 1px solid var(--main-color) !important;\n  }\n  #stylus #options .select-resizer:focus-within {\n    outline: 1px solid var(--main-color) !important;\n  }\n  button {\n    background-image: none !important;\n    text-shadow: none !important;\n  }\n  optgroup {\n    background: var(--even-entry-background);\n    color: var(--main-color) !important;\n  }\n  option {\n    background: var(--main-background) !important;\n    color: var(--main-text) !important;\n  }\n  #stylus button[disabled] {\n    opacity: .4;\n  }\n  #stylus button[disabled]:hover {\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  .install::before {\n    box-shadow: var(--shadow);\n  }\n\n  .install.update::after {\n    filter: none;\n  }\n  .install.update::before, .install.update:active::before,\n  .install.update:active:hover::before {\n    background-color: var(--hover-background);\n    opacity: .6;\n  }\n  .install.update:hover::before {\n    background-color: var(--hover-background);\n    opacity: .9;\n  }\n\n  /* Search\n   * Fixed search including replace and match highlight */\n  #search-replace-dialog {\n    background: var(--second-background) !important;\n  }\n  #search-replace-dialog textarea, #search-replace-dialog [data-action=\"clear\"] {\n    background: var(--main-background) !important;\n  }\n  body.find-open .search-target-editor.CodeMirror-active {\n    outline-color: var(--main-color) !important;\n  }\n  body.find-open .cm-searching {\n    background-color: var(--warning-disable-all) !important;\n    color: var(--main-text) !important;\n  }\n  body.find-open .cm-searching.search-target-match {\n    background-color: var(--no-match) !important;\n    color: var(--main-text) !important;\n  }\n  body.find-open .CodeMirror-search-match {\n    background: var(--main-color) !important;\n    border-top: 1px solid var(--no-match) !important;\n    border-bottom: 1px solid var(--no-match) !important;\n  }\n  /* match highlighter is too dark for dark themes so we tweak that also */\n  @keyframes fadein-match-highlighter {\n    from {\n      background-color: inherit;\n      color: inherit;\n    }\n    to {\n      background-color: var(--main-color);\n      color: var(--main-text);\n      opacity: .8;\n    }\n  }\n\n  .CodeMirror-dialog, .CodeMirror-dialog input {\n    background: var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  .CodeMirror-dialog-top {\n    border-color: var(--main-color) !important;\n  }\n  if hide-scrollbar {\n    /* this hack prevents Ubuntu Firefox from showing a scrollbar when using\n     * Global Overlay Scrollbars styles\n     */\n    .firefox .CodeMirror-search-field {\n      overflow: hidden !important;\n    }\n  }\n\n  /* Autocomplete hints */\n  .CodeMirror-hints {\n    background: var(--second-background) !important;\n    box-shadow: var(--shadow) !important;\n    border-color: var(--hover-background) !important;\n  }\n  li.CodeMirror-hint {\n    color: var(--dimmer-text) !important;\n  }\n  li.CodeMirror-hint-active {\n    background: var(--main-color) !important;\n    border-color: var(--main-color) !important;\n  }\n  li.CodeMirror-hint:hover {\n    background: var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  .CodeMirror-linenumber:hover, .CodeMirror-foldgutter-open:hover,\n  .CodeMirror-foldgutter-folded:hover {\n    color: inherit !important;\n  }\n  if use-modified-default {\n    /* Default theme overwritten with adjusted colors */\n    .cm-s-default.CodeMirror {\n      background: var(--second-background);\n      color: var(--main-text);\n    }\n    .cm-s-default div.CodeMirror-selected {\n      background: var(--select-background);\n    }\n    .cm-s-default .CodeMirror-line::selection,\n    .cm-s-default .CodeMirror-line > span::selection,\n    .cm-s-default .CodeMirror-line > span > span::selection {\n      background: var(--select-background);\n    }\n    .cm-s-default .CodeMirror-line::-moz-selection,\n    .cm-s-default .CodeMirror-line > span::-moz-selection,\n    .cm-s-default .CodeMirror-line > span > span::-moz-selection {\n      background-color: var(--select-background);\n    }\n    .cm-s-default .CodeMirror-gutters {\n      background: var(--hover-background);\n      border-right: 0;\n    }\n    .cm-s-default .CodeMirror-guttermarker {\n      color: var(--main-text);\n    }\n    .cm-s-default .CodeMirror-guttermarker-subtle,\n    .cm-s-default .CodeMirror-linenumber {\n      color: var(--dimmer-text);\n    }\n    .cm-s-default .CodeMirror-linenumber:hover,\n    .cm-s-default .CodeMirror-foldgutter-open:hover,\n    .cm-s-default .CodeMirror-foldgutter-folded:hover {\n      color: initial;\n    }\n    .cm-s-default .CodeMirror-cursor {\n      border-left: var(--cursor-width) solid var(--cursor-color);\n    }\n    .cm-s-default span.cm-comment {\n      color: var(--dimmer-text);\n    }\n    .cm-s-default span.cm-atom, .cm-s-default span.cm-number {\n      color: var(--main-color);\n    }\n    .cm-s-default span.cm-property, .cm-s-default span.cm-attribute {\n      color: var(--main-color);\n      opacity: 1;\n    }\n    .cm-s-default span.cm-keyword, .cm-s-default span.cm-string {\n      color: var(--main-color);\n    }\n    .cm-s-default span.cm-string.cm-property {\n      color: var(--main-text);\n    }\n    .cm-s-default span.cm-variable {\n      color: var(--main-text);\n    }\n    .cm-s-default span.cm-variable-2 {\n      color: var(--main-color);\n      opacity: .7;\n    }\n    .cm-s-default .cm-variable-3, .cm-s-default .cm-type {\n      color: var(--main-color);\n      filter: invert(100%);\n    }\n    .cm-s-default span.cm-def {\n      color: var(--main-text);\n    }\n    .cm-s-default span.cm-bracket {\n      color: var(--main-text);\n      font-weight: bold;\n    }\n    .cm-s-default span.cm-tag {\n      color: var(--main-color);\n      opacity: .7;\n    }\n    .cm-s-default span.cm-link, .cm-s-default span.cm-keyword {\n      color: var(--main-color);\n    }\n    .cm-s-default span.cm-keyword:not(.colorview-swatch), .cm-s-default span.cm-string {\n      color: var(--main-color);\n      filter: hue-rotate(60deg);\n    }\n    .cm-s-default span.cm-link, .cm-s-default span.cm-keyword:not(.colorview-swatch) {\n      color: var(--main-color);\n      filter: invert(100%);\n    }\n    .cm-s-default span.cm-error {\n      border-bottom: var(--hover-background);\n      color: var(--main-text);\n    }\n    .cm-s-default span.cm-qualifier {\n      color: var(--main-text);\n    }\n    .cm-s-default .CodeMirror-activeline-background {\n      background: var(--select-background);\n    }\n    .cm-s-default .CodeMirror-matchingbracket {\n      color: var(--main-color);\n    }\n    .cm-s-default .CodeMirror-matchingtag {\n      background: var(--dimmer-text);\n    }\n    .cm-s-default .cm-builtin {\n      color: var(--main-color);\n    }\n    .cm-s-default .cm-meta {\n      color: var(--dimmer-text);\n    }\n  }\n\n  /* Stylish in chrome specific */\n  /* fix: Stylus remove that unsightly white border in input */\n  body:not(#stylus-options) input:not(.slider),\n  #stylus-options label input[type=\"number\"]#popupWidth,\n  #stylus-options input[type=\"number\"]#updateInterval,\n  #stylus .options-column .option input#editor\\.tabSize {\n    background-color: var(--hover-background) !important;\n    border: 1px solid var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  body:not(#stylus-options) input:not(:invalid):not(.slider):focus,\n  body:not(#stylus-options) input:not(:invalid):not(.slider):hover,\n  #stylus .options-column .option input#editor\\.tabSize:hover,\n  #stylus-options label input[type=\"number\"]#popupWidth:hover,\n  #stylus-options input[type=\"number\"]#updateInterval:hover {\n    border: 1px solid var(--main-color) !important;\n  }\n  body:not(#stylus-options) input:invalid {\n    border-color: var(--warning-disable-all) !important;\n    color: var(--warning-disable-all) !important;\n    background-color: darken(colorRed, 80%) !important;\n  }\n  fieldset, [style-id], .disabled {\n    border-color: var(--hover-background);\n  }\n  .CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-active {\n    outline-color: var(--main-color);\n  }\n\n  /* Stylus in chrome specific */\n  #manage\\.onlyEnabled\\.invert, #manage\\.onlyLocal\\.invert,\n  #manage\\.onlyUsercss\\.invert {\n    color: var(--dimmer-text);\n    box-shadow: var(--shadow) !important;\n  }\n  #advanced.collapsible h1 {\n    color: var(--main-text) !important;\n  }\n  #advanced.collapsible h1:hover {\n    color: var(--main-color) !important;\n  }\n  .block, .color-swatch {\n    border-color: var(--hover-background) !important;\n  }\n\n  body #options-title {\n    color: var(--main-text);\n    background: var(--hover-background);\n  }\n  #options-close-icon svg path {\n    fill: var(--dimmer-text);\n  }\n  #options-close-icon:hover svg path {\n    fill: var(--main-color);\n  }\n\n  /* Install *.user.css page */\n  .CodeMirror-linewidget .applies-to {\n    background-color: var(--second-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n  .applies-type {\n    background-color: var(--hover-background) !important;\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  .applies-type:hover, #options .option label:hover {\n    color: var(--main-color) !important;\n  }\n  .config-dialog label {\n    border-color: var(--hover-background) !important;\n  }\n  .config-dialog select, .beautify-options select {\n    background-color: var(--hover-background) !important;\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  .config-dialog select:hover, .beautify-options select:hover {\n    color: var(--main-color) !important;\n  }\n  /* userCSS button */\n  .install.reinstall {\n    background: var(--hover-background) !important;\n  }\n  .header {\n    border-color: var(--hover-background) !important;\n  }\n\n  /* Checkboxes *\n  * input[type=\"checkbox\"] cant have a bg, else .onoffswitch goes square */\n  input[type=\"checkbox\"] {\n    border-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  input[type=\"checkbox\"]:not(.slider) {\n    background-color: var(--second-background) !important;\n    border-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  input[type=\"checkbox\"]:hover, input[type=\"checkbox\"]:not(.slider):hover,\n  .filter-selection:hover input[type=\"checkbox\"],\n  #enabled-label input[type=\"checkbox\"]:not(.slider).style-contributor:hover {\n    border-color: var(--main-color) !important;\n  }\n  input[type=\"checkbox\"]:checked:not(.slider) + .svg-icon.checked {\n    fill: var(--main-color) !important;\n  }\n  /* fixes the popup/manager elsewhere checkbox hover */\n  .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup .entry.disabled .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup .entry.enabled .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-manage .style-name:hover .checker[type=\"checkbox\"],\n  #options label input[type=\"checkbox\"]:not(.slider):hover,\n  #options label:focus-within input[type=\"checkbox\"]:not(.slider),\n  #basic-info-enabled input[type=\"checkbox\"]:not(.slider):focus-within,\n  #filters .filter-selection input[type=\"checkbox\"]:not(.slider):focus-within,\n  #filters .filter-selection input[type=\"checkbox\"]:not(.slider):hover,\n  #filters .filter-selection:focus-within input[type=\"checkbox\"]:not(.slider),\n  #filters .filter-selection:hover input[type=\"checkbox\"]:not(.slider),\n  .entry .style-name:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-manage .style-name:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #find-styles-inline-group:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #find-styles-inline-group:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #installed .style-name:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #installed .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #add-style-as-usercss-wrapper input#newStyleAsUsercss[type=\"checkbox\"]:hover,\n  #add-style-as-usercss-wrapper input#newStyleAsUsercss[type=\"checkbox\"]:focus-within,\n  label#enabled-label:hover input#enabled[type=\"checkbox\"].style-contributor,\n  label#enabled-label:focus-within input#enabled[type=\"checkbox\"].style-contributor,\n  label#preview-label:hover input#editor\\.livePreview[type=\"checkbox\"],\n  label#preview-label:focus-within input#editor\\.livePreview[type=\"checkbox\"],\n  input#enabled[type=\"checkbox\"]:hover, #basic-info-enabled input[type=\"checkbox\"]:not(.slider):hover,\n  body:not(#stylus-options) input.exclude-by-domain-checkbox:not(:invalid):not(.slider):focus,\n  body:not(#stylus-options) input.exclude-by-domain-checkbox:not(:invalid):not(.slider):focus-within,\n  body:not(#stylus-options) input.exclude-by-domain-checkbox:not(:invalid):not(.slider):hover,\n  body:not(#stylus-options) input.exclude-by-url-checkbox:not(:invalid):not(.slider):focus,\n  body:not(#stylus-options) input.exclude-by-url-checkbox:not(:invalid):not(.slider):focus-within,\n  body:not(#stylus-options) input.exclude-by-url-checkbox:not(:invalid):not(.slider):hover {\n    border-color: var(--main-color) !important;\n    background-color: var(--main-background) !important;\n  }\n\n  /* override the browser built in style for checkbox sliders */\n  .onoffswitch span {\n    border-color: var(--main-color);\n  }\n  .onoffswitch span::before {\n    background: var(--hover-background);\n  }\n  .onoffswitch input:checked + span {\n    background-color: var(--dimmer-text);\n  }\n  .onoffswitch input:checked + span, .onoffswitch input:checked + span::before {\n    border-color: var(--dimmer-text);\n  }\n  .onoffswitch input:checked + span::before {\n    background-color: var(--main-color);\n  }\n\n  /* This fixes the misalignment between:\n   * [ ] checkbox and label */\n  #disableAll, #find-styles-inline-group label input[type=\"checkbox\"]:not(.slider) {\n    margin-top: 2px !important;\n  }\n  #find-styles-inline-group .checked {\n    padding-top: 2px !important;\n  }\n  /* This fixes the disable all checkbox bg being too bright on hover\t*/\n  #stylus-popup input#disableAll[type=\"checkbox\"]:not(.slider):hover,\n  #stylus-popup input#disableAll[type=\"checkbox\"]:not(.slider):focus,\n  #stylus-popup input#disableAll[type=\"checkbox\"]:not(.slider):focus-within {\n    border-color: var(--warning-disable-all) !important;\n    background-color: var(--second-background) !important;\n  }\n  #stylus-popup #disableAll-label:hover,\n  #stylus-popup #disableAll-label:focus-within {\n    color: var(--warning-disable-all) !important;\n  }\n\n  /* Colorpicker\n   * This prevents the format change arrow from being cut off to the right,\n   * and in addition when hovering/focus we get the nice --main-color. */\n  .colorpicker-format-change {\n    top: 3px;\n    right: -1px;\n    padding-right: 2px;\n  }\n  .colorpicker-format-change-button:hover {\n    color: var(--main-color) !important;\n  }\n  .colorpicker-input:hover, .colorpicker-input:focus {\n    border-color: var(--main-color) !important;\n  }\n}\n",
+		"sections": [
+			{
+				"code": ":root {\n    --main-color: #00adee;\n    --main-background: #111;\n    --second-background: #181818;\n    --hover-background: #232323;\n    --main-text: #eff0f1;\n    --dimmer-text: #ccc;\n    --editor-background: #181818;\n    --select-background: #232323;\n    --shadow: 0 1px 0.5px rgba(0,0,0,0.3);\n    --even-entry-background: rgba(0,0,0,0.6);\n    --font-size: 12px;\n/* Cursor width and color */\n    --cursor-width: 1px;\n    --cursor-color: #00adee;\n    --sidebar_width: 280px;\n/* These are must have static colors */\n/* Disable all color/warning Breeze Dark */\n    --red: #da4453;\n    --yellow: #fdbc4b;\n    --warning-disable-all: var(--red);\n/* No match regex color from Breeze Dark */\n/* added for easy change with swicher */\n    --no-match: var(--yellow);\n  }\n  html {\n    text-rendering: optimizeLegibility !important;\n    -webkit-font-smoothing: antialiased !important;\n  }\n  body,\n  #options-title {\n    border-color: var(--hover-background);\n  }\n  html.newUI .entry.even,\n  .keymap-list > tbody > tr:nth-child(even),\n  #stylus-manage [id*=\"style-\"].entry.even {\n    background-color: var(--even-entry-background) !important;\n  }\n  #hotkey-info mark {\n    background: var(--main-background) !important;\n    border: 1px solid var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  #hotkey-info[data-active],\n  #hotkey-info > div {\n    background: var(--main-background) !important;\n    border: 1px solid var(--second-background) !important;\n  }\n  #stylus-edit,\n  body,\n  html,\n  #notes,\n  #header,\n  #actions {\n    background-color: var(--main-background) !important;\n    color: var(--dimmer-text) !important;\n  }\n  a,\n  a:visited,\n  .style-name-link {\n    color: var(--main-color) !important;\n    opacity: 0.9;\n  }\n  a:hover,\n  .style-name-link:hover,\n  a:focus-within,\n  .style-name-link:focus-within,\n  h2:focus-within .style-name-link,\n  .entry:hover .style-name-link,\n  .style-name-link a.delete:hover,\n  .style-name-link a.homepage:hover {\n    opacity: 1;\n    filter: brightness(115%) !important;\n  }\n  .disabled h2::after,\n  .search-result,\n  .search-result-meta,\n  .entry.usercss .style-name-link::after {\n    background-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  .entry.usercss .style-name-link::after {\n    color: var(--main-color) !important;\n  }\n  .disabled h2:focus-within .style-name-link,\n  .entry.disabled:hover .style-name-link {\n    opacity: 0.8;\n  }\n  #filters label:hover,\n  #filters .filter-selection:hover,\n  #filters label:hover select,\n  #filters .filter-selection:hover select,\n  #filters .filter-selection:focus-within select {\n    background-color: transparent !important;\n    color: var(--main-color) !important;\n  }\n  #filters label:hover .svg-icon.select-arrow,\n  #filters .filter-selection:hover .svg-icon.select-arrow {\n    fill: var(--main-color) !important;\n  }\n  select,\n  .svg-icon.select-arrow {\n    transition: none !important;\n  }\n  .entry {\n    border-color: var(--second-background) !important;\n    box-shadow: inset 0 1px 0 0 var(--second-background) !important;\n  }\n  .newUI .entry .style-name:hover::before {\n    filter: grayscale(1);\n  }\n  #header {\n    width: var(--sidebar_width) !important;\n  }\n  #header {\n    border-right: 1px solid var(--hover-background) !important;\n  }\n  #header h1 {\n    color: var(--main-text) !important;\n  }\n  #header summary:hover h2,\n  #header summary h2:hover {\n    color: var(--main-color) !important;\n  }\n  #header summary:hover h2,\n  #search-replace-dialog [data-action=\"case\"][data-enabled]::after {\n    border-color: var(--main-color) !important;\n  }\n  [lang*=\"en-\"] #linter-label {\n    white-space: nowrap !important;\n  }\n  .resize-grip {\n    background-color: var(--hover-background) !important;\n    border-color: var(--main-background) !important;\n  }\n  .CodeMirror {\n    border: 1px solid var(--hover-background);\n  }\n  .CodeMirror-scrollbar-filler {\n    background: var(--even-entry-background) !important;\n  }\n  .CodeMirror-focused,\n  .CodeMirror-active {\n    outline: 1px auto var(--main-color);\n  }\n  ::selection {\n    background: var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  ::-moz-selection {\n    background: var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  ::-webkit-selection {\n    background: var(--main-color) !important;\n    color: var(--main-text) !important;\n  }\n  ::placeholder {\n    color: var(--dimmer-text) !important;\n    opacity: 0.5;\n  }\n  ::-webkit-input-placeholder {\n    color: var(--dimmer-text) !important;\n    opacity: 0.5;\n  }\n  ::-moz-placeholder {\n    color: var(--dimmer-text) !important;\n    opacity: 0.5;\n  }\n  .CodeMirror,\n  .CodeMirror-hints {\n    font-family: \"Monaco\", \"Menlo\", \"Ubuntu Mono\", \"Consolas\", \"source-code-pro\", monospace !important;\n    font-size: var(--font-size) !important;\n  }\n  .CodeMirror-lint-tooltip {\n    background-color: var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  .CodeMirror-hint {\n    background-color: var(--main-background);\n  }\n  div.CodeMirror span.CodeMirror-matchingbracket {\n    color: var(--main-color) !important;\n    -webkit-text-fill-color: var(--main-color) !important;\n    font-weight: 900 !important;\n    outline: 0 !important;\n  }\n  div.CodeMirror span.CodeMirror-nonmatchingbracket {\n    color: var(--warning-disable-all) !important;\n    -webkit-text-fill-color: var(--warning-disable-all) !important;\n    font-weight: 900 !important;\n  }\n  .CodeMirror-foldmarker {\n    color: var(--main-text) !important;\n    text-shadow: none !important;\n    font-size: 18px !important;\n  }\n  .CodeMirror div.CodeMirror-cursor {\n    border-left-width: var(--cursor-width) !important;\n    border-color: var(--cursor-color) !important;\n  }\n  .main-controls,\n  .entry,\n  .firefox body,\n  #help-popup .title {\n    background-color: var(--main-background) !important;\n  }\n  #help-popup {\n    background-color: var(--second-background) !important;\n  }\n  #confirm > div,\n  .menu-items-wrapper {\n    background-color: var(--second-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n  .svg-icon,\n  .svg-icon.info,\n  .newUI .entry .svg-icon {\n    fill: var(--main-text) !important;\n  }\n  .svg-icon.info:hover,\n  .svg-icon:hover,\n  a:hover .svg-icon,\n  .newUI .entry:hover .svg-icon:hover,\n  .svg-icon.checked,\n  a.homepage:focus-within .svg-icon,\n  a.delete:focus-within .svg-icon,\n  a.check-update:focus-within .svg-icon,\n  a.configure-usercss:focus-within .svg-icon,\n  a:focus-within .svg-icon {\n    fill: var(--main-color) !important;\n  }\n  .newUI .can-update[data-details$=\"locally edited\"] .update svg,\n  .newUI .update-problem .check-update svg {\n    fill: var(--warning-disable-all) !important;\n  }\n  .newUI .entry.can-update[data-error=\"may be locally edited\"] .update::after,\n  .newUI .entry[data-error=\"locally edited\"] .update::after {\n    background: var(--second-background) !important;\n    border-color: var(--warning-disable-all) !important;\n    color: var(--warning-disable-all) !important;\n  }\n  .newUI .no-update:not(.update-problem):not(.update-done) .up-to-date::after,\n  .newUI .update:not(.update-problem) .update-done .up-to-date::after,\n  .newUI .entry .updated[title=\"Update completed.\"]::after,\n  .newUI .entry .update[title=\"Install update\"]::after {\n    background-color: var(--second-background) !important;\n    border-color: var(--main-color) !important;\n    color: var(--main-color) !important;\n  }\n  #message-box-title,\n  #message-box-buttons {\n    background-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  #message-box-contents {\n    background-color: var(--second-background) !important;\n  }\n  #message-box-close-icon .svg-icon {\n    fill: var(--dimmer-text) !important;\n  }\n  #message-box-close-icon:hover .svg-icon {\n    fill: var(--main-color) !important;\n  }\n  .help-text mark {\n    background: var(--hover-background) !important;\n    border: 1px solid var(--even-entry-background) !important;\n  }\n  .newUI .updater-icons > :not(.check-update)::after {\n    background-color: var(--hover-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n  .newUI .update-problem .check-update::after {\n    content: attr(title);\n    position: absolute;\n    margin-top: 18px;\n    margin-left: -36px;\n    padding: 1ex 1.5ex;\n    border-radius: 4px;\n    animation: fadeout 10s;\n    animation-fill-mode: both;\n    background: var(--second-background);\n    border: 1px solid var(--warning-disable-all);\n    color: var(--warning-disable-all);\n  }\n  #lint td[role=\"message\"] {\n    white-space: pre-wrap;\n  }\n  .warnings {\n    background-color: var(--hover-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n  #filters.active,\n  .active #filters-stats {\n    background-color: var(--hover-background);\n    border-color: var(--main-color);\n    color: var(--main-text);\n  }\n  body.all-styles-hidden-by-filters::before,\n  body.all-styles-hidden-by-filters::after {\n    color: var(--main-color) !important;\n    opacity: 0.5;\n  }\n  .regexp-report details[data-type=\"full\"] {\n    color: var(--main-color) !important;\n  }\n  .regexp-report details[data-type=\"none\"] {\n    color: var(--no-match) !important;\n  }\n  .regexp-report details[data-type=\"invalid\"] {\n    color: var(--warning-disable-all) !important;\n  }\n  option[disabled] {\n    color: var(--hover-background) !important;\n  }\n  select {\n    background-color: var(--second-background) !important;\n    color: var(--main-text) !important;\n    border-color: var(--hover-background) !important;\n  }\n  select:hover {\n    border-color: var(--main-color) !important;\n    color: var(--main-color) !important;\n  }\n  #name,\n  .applies-to li .applies-value,\n  #search,\n  .keymap-list input,\n  #sort-select,\n  .sorter-selection select,\n  body#stylus-options #message-box input {\n    background-color: var(--hover-background) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  input:not([type]),\n  #search,\n  #sort-select,\n  .sorter-selection select,\n  body#stylus-options #message-box input,\n  .applies-to label {\n    color: var(--main-text) !important;\n  }\n  #name:hover,\n  .applies-to li .applies-value:hover,\n  #search:hover,\n  .keymap-list input:hover,\n  #name:active,\n  .applies-to li .applies-value:active,\n  #search:active,\n  .keymap-list input:active,\n  #name:focus,\n  .applies-to li .applies-value:focus,\n  #search:focus,\n  .keymap-list input:focus,\n  body#stylus-options #message-box input:not(:invalid):focus,\n  body#stylus-options #message-box input:not(:invalid):hover {\n    border: 1px solid var(--main-color) !important;\n  }\n  #stylus-popup .disabled .style-name {\n    opacity: 0.7;\n  }\n  #stylus-popup .entry:hover .style-name,\n  #stylus-popup .disabled:hover .style-name,\n  a.expander {\n    color: var(--main-text) !important;\n    opacity: 1;\n  }\n  #stylus-popup #installed .entry:nth-child(even) .main-controls,\n  #stylus-popup #installed .entry:nth-child(even) {\n    background-color: var(--even-entry-background) !important;\n    box-shadow: none !important;\n  }\n  #installed .entry.disabled:focus-within .style-name,\n  #installed .entry:focus-within .style-name {\n    color: var(--main-text) !important;\n  }\n  #message-box input.slider {\n    background: none !important;\n    border: 0 !important;\n  }\n  @supports (-moz-appearance: none) {\n    input[type=\"color\"] {\n      padding: 2px 4px !important;\n    }\n  }\n  input[type=\"color\"]:not(*:root) {\n    padding: 0;\n    height: 28px;\n  }\n  input[type=\"color\"]:hover,\n  .color-swatch:hover,\n  input[type=\"color\"]:focus-within,\n  .color-swatch:focus-within {\n    outline: 1px solid var(--main-color) !important;\n  }\n  #stylus-popup #confirm div {\n    border-color: var(--red) !important;\n  }\n  #sections > div:not(:first-of-type) {\n    border-top: 2px solid var(--second-background) !important;\n  }\n  button,\n  .remove-applies-to,\n  .add-applies-to,\n  #backup-buttons .dropdown-content a {\n    transition: color 0.25s, border-color 0.25s;\n    transition: background-color 0.25s, border-color 0.25s;\n  }\n  #save-button,\n  #beautify,\n  #cancel-button,\n  #from-mozilla,\n  #to-mozilla,\n  #editor.keyMap,\n  #editor.theme,\n  #editor.matchHighlight,\n  .applies-type.style-contributor,\n  .add-section,\n  .beautify-section,\n  .test-regexp,\n  .remove-applies-to,\n  .add-applies-to,\n  #check-all-updates,\n  #add-style-label,\n  #manage-options-button,\n  button,\n  #manage\\.newUI\\.targets,\n  #badgeNormal,\n  #badgeDisabled,\n  #updateInterval,\n  #popupWidth,\n  #editor.linter,\n  #options button,\n  #manage\\.newUI\\.sort,\n  #message-box-contents select,\n  a.remove-applies-to,\n  a.add-applies-to {\n    background-color: var(--second-background) !important;\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  #backup-buttons .dropdown-content,\n  #unfile-all-styles,\n  #file-all-styles,\n  #sync-dropbox-import,\n  #sync-dropbox-export {\n    background: var(--second-background) !important;\n    color: var(--main-text) !important;\n  }\n  #backup-buttons .dropdown-content a:hover,\n  #unfile-all-styles:hover,\n  #file-all-styles:hover,\n  #sync-dropbox-import:hover,\n  #options {\n    background: var(--main-background) !important;\n  }\n  #sync-dropbox-import:hover,\n  #sync-dropbox-export:hover,\n  #file-all-styles:hover,\n  #unfile-all-styles:hover,\n  #options .option label:focus-within,\n  #newUIoptions div label:hover,\n  #newUIoptions div label:focus-within,\n  #options label:focus-within span,\n  #options input:focus-within,\n  #options label span:hover {\n    color: var(--main-color) !important;\n  }\n  #save-button:hover,\n  #beautify:hover,\n  #cancel-button:hover,\n  #from-mozilla:hover,\n  #to-mozilla:hover,\n  #editor.keyMap:hover,\n  #editor.theme:hover,\n  #editor.matchHighlight:hover,\n  .applies-type.style-contributor:hover,\n  .add-section:hover,\n  .beautify-section:hover,\n  .test-regexp:hover,\n  .remove-applies-to:hover,\n  .add-applies-to:hover,\n  option:hover,\n  #check-all-updates:hover,\n  button#add-style-label:hover,\n  #manage-options-button:hover,\n  button:hover,\n  #manage\\.newUI\\.targets:hover,\n  #updateInterval:hover,\n  #popupWidth:hover,\n  #editor.linter:hover,\n  #options button:hover,\n  #manage\\.newUI\\.sort:hover,\n  #message-box-contents select:hover,\n  a.remove-applies-to:hover,\n  #stylus-popup #popup-manage-button:focus-within,\n  a.add-applies-to:hover,\n  #stylus-popup #popup-options-button:focus-within,\n  #stylus-popup #popup-wiki-button:focus-within,\n  #header button#save-button:focus-within,\n  #header button#beautify:focus-within,\n  #header button#cancel-button:focus-within,\n  #header button:focus-within,\n  #manage\\.newUI\\.sort:focus-within,\n  a#find-editor-styles:focus-within button,\n  #check-all-updates:focus-within,\n  a[href=\"edit.html\"]:focus-within button#add-style-label {\n    color: var(--main-color) !important;\n    border: 1px solid var(--main-color) !important;\n  }\n  #stylus .options-column .option input#editor\\.tabSize:focus-within,\n  #stylus .options-column .option select:focus-within,\n  #stylus #options label:focus-within input[type=\"number\"],\n  #stylus #options [type=\"button\"]:focus-within {\n    border: 1px solid var(--main-color) !important;\n  }\n  #stylus #options .select-resizer:focus-within {\n    outline: 1px solid var(--main-color) !important;\n  }\n  button {\n    background-image: none !important;\n    text-shadow: none !important;\n  }\n  optgroup {\n    background: var(--even-entry-background);\n    color: var(--main-color) !important;\n  }\n  option {\n    background: var(--main-background) !important;\n    color: var(--main-text) !important;\n  }\n  #stylus button[disabled] {\n    opacity: 0.4;\n  }\n  #stylus button[disabled]:hover {\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  .install::before {\n    box-shadow: var(--shadow);\n  }\n  .install.update::after {\n    filter: none;\n  }\n  .install.update::before,\n  .install.update:active::before,\n  .install.update:active:hover::before {\n    background-color: var(--hover-background);\n    opacity: 0.6;\n  }\n  .install.update:hover::before {\n    background-color: var(--hover-background);\n    opacity: 0.9;\n  }\n  #search-replace-dialog {\n    background: var(--second-background) !important;\n  }\n  #search-replace-dialog textarea,\n  #search-replace-dialog [data-action=\"clear\"] {\n    background: var(--main-background) !important;\n  }\n  body.find-open .search-target-editor.CodeMirror-active {\n    outline-color: var(--main-color) !important;\n  }\n  body.find-open .cm-searching {\n    background-color: var(--warning-disable-all) !important;\n    color: var(--main-text) !important;\n  }\n  body.find-open .cm-searching.search-target-match {\n    background-color: var(--no-match) !important;\n    color: var(--main-text) !important;\n  }\n  body.find-open .CodeMirror-search-match {\n    background: var(--main-color) !important;\n    border-top: 1px solid var(--no-match) !important;\n    border-bottom: 1px solid var(--no-match) !important;\n  }\n  .CodeMirror-dialog,\n  .CodeMirror-dialog input {\n    background: var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  .CodeMirror-dialog-top {\n    border-color: var(--main-color) !important;\n  }\n  .CodeMirror-hints {\n    background: var(--second-background) !important;\n    box-shadow: var(--shadow) !important;\n    border-color: var(--hover-background) !important;\n  }\n  li.CodeMirror-hint {\n    color: var(--dimmer-text) !important;\n  }\n  li.CodeMirror-hint-active {\n    background: var(--main-color) !important;\n    border-color: var(--main-color) !important;\n  }\n  li.CodeMirror-hint:hover {\n    background: var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  .CodeMirror-linenumber:hover,\n  .CodeMirror-foldgutter-open:hover,\n  .CodeMirror-foldgutter-folded:hover {\n    color: inherit !important;\n  }\n  .cm-s-default.CodeMirror {\n    background: var(--second-background);\n    color: var(--main-text);\n  }\n  .cm-s-default div.CodeMirror-selected {\n    background: var(--select-background);\n  }\n  .cm-s-default .CodeMirror-line::selection,\n  .cm-s-default .CodeMirror-line > span::selection,\n  .cm-s-default .CodeMirror-line > span > span::selection {\n    background: var(--select-background);\n  }\n  .cm-s-default .CodeMirror-line::-moz-selection,\n  .cm-s-default .CodeMirror-line > span::-moz-selection,\n  .cm-s-default .CodeMirror-line > span > span::-moz-selection {\n    background-color: var(--select-background);\n  }\n  .cm-s-default .CodeMirror-gutters {\n    background: var(--hover-background);\n    border-right: 0;\n  }\n  .cm-s-default .CodeMirror-guttermarker {\n    color: var(--main-text);\n  }\n  .cm-s-default .CodeMirror-guttermarker-subtle,\n  .cm-s-default .CodeMirror-linenumber {\n    color: var(--dimmer-text);\n  }\n  .cm-s-default .CodeMirror-linenumber:hover,\n  .cm-s-default .CodeMirror-foldgutter-open:hover,\n  .cm-s-default .CodeMirror-foldgutter-folded:hover {\n    color: initial;\n  }\n  .cm-s-default .CodeMirror-cursor {\n    border-left: var(--cursor-width) solid var(--cursor-color);\n  }\n  .cm-s-default span.cm-comment {\n    color: var(--dimmer-text);\n  }\n  .cm-s-default span.cm-atom,\n  .cm-s-default span.cm-number {\n    color: var(--main-color);\n  }\n  .cm-s-default span.cm-property,\n  .cm-s-default span.cm-attribute {\n    color: var(--main-color);\n    opacity: 1;\n  }\n  .cm-s-default span.cm-keyword,\n  .cm-s-default span.cm-string {\n    color: var(--main-color);\n  }\n  .cm-s-default span.cm-string.cm-property {\n    color: var(--main-text);\n  }\n  .cm-s-default span.cm-variable {\n    color: var(--main-text);\n  }\n  .cm-s-default span.cm-variable-2 {\n    color: var(--main-color);\n    opacity: 0.7;\n  }\n  .cm-s-default .cm-variable-3,\n  .cm-s-default .cm-type {\n    color: var(--main-color);\n    filter: invert(100%);\n  }\n  .cm-s-default span.cm-def {\n    color: var(--main-text);\n  }\n  .cm-s-default span.cm-bracket {\n    color: var(--main-text);\n    font-weight: bold;\n  }\n  .cm-s-default span.cm-tag {\n    color: var(--main-color);\n    opacity: 0.7;\n  }\n  .cm-s-default span.cm-link,\n  .cm-s-default span.cm-keyword {\n    color: var(--main-color);\n  }\n  .cm-s-default span.cm-keyword:not(.colorview-swatch),\n  .cm-s-default span.cm-string {\n    color: var(--main-color);\n    filter: hue-rotate(60deg);\n  }\n  .cm-s-default span.cm-link,\n  .cm-s-default span.cm-keyword:not(.colorview-swatch) {\n    color: var(--main-color);\n    filter: invert(100%);\n  }\n  .cm-s-default span.cm-error {\n    border-bottom: var(--hover-background);\n    color: var(--main-text);\n  }\n  .cm-s-default span.cm-qualifier {\n    color: var(--main-text);\n  }\n  .cm-s-default .CodeMirror-activeline-background {\n    background: var(--select-background);\n  }\n  .cm-s-default .CodeMirror-matchingbracket {\n    color: var(--main-color);\n  }\n  .cm-s-default .CodeMirror-matchingtag {\n    background: var(--dimmer-text);\n  }\n  .cm-s-default .cm-builtin {\n    color: var(--main-color);\n  }\n  .cm-s-default .cm-meta {\n    color: var(--dimmer-text);\n  }\n  body:not(#stylus-options) input:not(.slider),\n  #stylus-options label input[type=\"number\"]#popupWidth,\n  #stylus-options input[type=\"number\"]#updateInterval,\n  #stylus .options-column .option input#editor\\.tabSize {\n    background-color: var(--hover-background) !important;\n    border: 1px solid var(--hover-background) !important;\n    color: var(--main-text) !important;\n  }\n  body:not(#stylus-options) input:not(:invalid):not(.slider):focus,\n  body:not(#stylus-options) input:not(:invalid):not(.slider):hover,\n  #stylus .options-column .option input#editor\\.tabSize:hover,\n  #stylus-options label input[type=\"number\"]#popupWidth:hover,\n  #stylus-options input[type=\"number\"]#updateInterval:hover {\n    border: 1px solid var(--main-color) !important;\n  }\n  body:not(#stylus-options) input:invalid {\n    border-color: var(--warning-disable-all) !important;\n    color: var(--warning-disable-all) !important;\n    background-color: #470000 !important;\n  }\n  fieldset,\n  [style-id],\n  .disabled {\n    border-color: var(--hover-background);\n  }\n  .CodeMirror.cm-s-default.CodeMirror-wrap.CodeMirror-active {\n    outline-color: var(--main-color);\n  }\n  #manage\\.onlyEnabled\\.invert,\n  #manage\\.onlyLocal\\.invert,\n  #manage\\.onlyUsercss\\.invert {\n    color: var(--dimmer-text);\n    box-shadow: var(--shadow) !important;\n  }\n  #advanced.collapsible h1 {\n    color: var(--main-text) !important;\n  }\n  #advanced.collapsible h1:hover {\n    color: var(--main-color) !important;\n  }\n  .block,\n  .color-swatch {\n    border-color: var(--hover-background) !important;\n  }\n  body #options-title {\n    color: var(--main-text);\n    background: var(--hover-background);\n  }\n  #options-close-icon svg path {\n    fill: var(--dimmer-text);\n  }\n  #options-close-icon:hover svg path {\n    fill: var(--main-color);\n  }\n  .CodeMirror-linewidget .applies-to {\n    background-color: var(--second-background) !important;\n    border-color: var(--hover-background) !important;\n  }\n  .applies-type {\n    background-color: var(--hover-background) !important;\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  .applies-type:hover,\n  #options .option label:hover {\n    color: var(--main-color) !important;\n  }\n  .config-dialog label {\n    border-color: var(--hover-background) !important;\n  }\n  .config-dialog select,\n  .beautify-options select {\n    background-color: var(--hover-background) !important;\n    color: var(--main-text) !important;\n    border: 1px solid var(--hover-background) !important;\n  }\n  .config-dialog select:hover,\n  .beautify-options select:hover {\n    color: var(--main-color) !important;\n  }\n  .install.reinstall {\n    background: var(--hover-background) !important;\n  }\n  .header {\n    border-color: var(--hover-background) !important;\n  }\n  input[type=\"checkbox\"] {\n    border-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  input[type=\"checkbox\"]:not(.slider) {\n    background-color: var(--second-background) !important;\n    border-color: var(--hover-background) !important;\n    box-shadow: var(--shadow) !important;\n  }\n  input[type=\"checkbox\"]:hover,\n  input[type=\"checkbox\"]:not(.slider):hover,\n  .filter-selection:hover input[type=\"checkbox\"],\n  #enabled-label input[type=\"checkbox\"]:not(.slider).style-contributor:hover {\n    border-color: var(--main-color) !important;\n  }\n  input[type=\"checkbox\"]:checked:not(.slider) + .svg-icon.checked {\n    fill: var(--main-color) !important;\n  }\n  .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup .entry.disabled .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup .entry.enabled .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-manage .style-name:hover .checker[type=\"checkbox\"],\n  #options label input[type=\"checkbox\"]:not(.slider):hover,\n  #options label:focus-within input[type=\"checkbox\"]:not(.slider),\n  #basic-info-enabled input[type=\"checkbox\"]:not(.slider):focus-within,\n  #filters .filter-selection input[type=\"checkbox\"]:not(.slider):focus-within,\n  #filters .filter-selection input[type=\"checkbox\"]:not(.slider):hover,\n  #filters .filter-selection:focus-within input[type=\"checkbox\"]:not(.slider),\n  #filters .filter-selection:hover input[type=\"checkbox\"]:not(.slider),\n  .entry .style-name:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-manage .style-name:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #find-styles-inline-group:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #find-styles-inline-group:hover input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #installed .style-name:focus-within input[type=\"checkbox\"]:not(.slider),\n  #stylus-popup #installed .style-name:hover input[type=\"checkbox\"]:not(.slider),\n  #add-style-as-usercss-wrapper input#newStyleAsUsercss[type=\"checkbox\"]:hover,\n  #add-style-as-usercss-wrapper input#newStyleAsUsercss[type=\"checkbox\"]:focus-within,\n  label#enabled-label:hover input#enabled[type=\"checkbox\"].style-contributor,\n  label#enabled-label:focus-within input#enabled[type=\"checkbox\"].style-contributor,\n  label#preview-label:hover input#editor\\.livePreview[type=\"checkbox\"],\n  label#preview-label:focus-within input#editor\\.livePreview[type=\"checkbox\"],\n  input#enabled[type=\"checkbox\"]:hover,\n  #basic-info-enabled input[type=\"checkbox\"]:not(.slider):hover,\n  body:not(#stylus-options) input.exclude-by-domain-checkbox:not(:invalid):not(.slider):focus,\n  body:not(#stylus-options) input.exclude-by-domain-checkbox:not(:invalid):not(.slider):focus-within,\n  body:not(#stylus-options) input.exclude-by-domain-checkbox:not(:invalid):not(.slider):hover,\n  body:not(#stylus-options) input.exclude-by-url-checkbox:not(:invalid):not(.slider):focus,\n  body:not(#stylus-options) input.exclude-by-url-checkbox:not(:invalid):not(.slider):focus-within,\n  body:not(#stylus-options) input.exclude-by-url-checkbox:not(:invalid):not(.slider):hover {\n    border-color: var(--main-color) !important;\n    background-color: var(--main-background) !important;\n  }\n  .onoffswitch span {\n    border-color: var(--main-color);\n  }\n  .onoffswitch span::before {\n    background: var(--hover-background);\n  }\n  .onoffswitch input:checked + span {\n    background-color: var(--dimmer-text);\n  }\n  .onoffswitch input:checked + span,\n  .onoffswitch input:checked + span::before {\n    border-color: var(--dimmer-text);\n  }\n  .onoffswitch input:checked + span::before {\n    background-color: var(--main-color);\n  }\n  #disableAll,\n  #find-styles-inline-group label input[type=\"checkbox\"]:not(.slider) {\n    margin-top: 2px !important;\n  }\n  #find-styles-inline-group .checked {\n    padding-top: 2px !important;\n  }\n  #stylus-popup input#disableAll[type=\"checkbox\"]:not(.slider):hover,\n  #stylus-popup input#disableAll[type=\"checkbox\"]:not(.slider):focus,\n  #stylus-popup input#disableAll[type=\"checkbox\"]:not(.slider):focus-within {\n    border-color: var(--warning-disable-all) !important;\n    background-color: var(--second-background) !important;\n  }\n  #stylus-popup #disableAll-label:hover,\n  #stylus-popup #disableAll-label:focus-within {\n    color: var(--warning-disable-all) !important;\n  }\n  .colorpicker-format-change {\n    top: 3px;\n    right: -1px;\n    padding-right: 2px;\n  }\n  .colorpicker-format-change-button:hover {\n    color: var(--main-color) !important;\n  }\n  .colorpicker-input:hover,\n  .colorpicker-input:focus {\n    border-color: var(--main-color) !important;\n  }\n@-moz-keyframes fadein-match-highlighter {\n    from {\n      background-color: inherit;\n      color: inherit;\n    }\n    to {\n      background-color: var(--main-color);\n      color: var(--main-text);\n      opacity: 0.8;\n    }\n}\n@-webkit-keyframes fadein-match-highlighter {\n    from {\n      background-color: inherit;\n      color: inherit;\n    }\n    to {\n      background-color: var(--main-color);\n      color: var(--main-text);\n      opacity: 0.8;\n    }\n}\n@-o-keyframes fadein-match-highlighter {\n    from {\n      background-color: inherit;\n      color: inherit;\n    }\n    to {\n      background-color: var(--main-color);\n      color: var(--main-text);\n      opacity: 0.8;\n    }\n}\n@keyframes fadein-match-highlighter {\n    from {\n      background-color: inherit;\n      color: inherit;\n    }\n    to {\n      background-color: var(--main-color);\n      color: var(--main-text);\n      opacity: 0.8;\n    }\n}",
+				"start": 82,
+				"regexps": [
+					"moz-extension:\\/\\/.*",
+					"chrome-extension:\\/\\/.*"
+				]
+			}
+		],
+		"usercssData": {
+			"name": "Stylus DeepDark",
+			"namespace": "gitlab.com/RaitaroH/Stylus-DeepDark",
+			"homepageURL": "https://gitlab.com/RaitaroH/Stylus-DeepDark",
+			"version": "2.2.9",
+			"updateURL": "https://gitlab.com/RaitaroH/Stylus-DeepDark/raw/master/StylusDeepDark.user.css",
+			"description": "Write thy themes in the dark. May the dark be kinder on thine eyes. (Stylus dark theme)",
+			"author": "RaitaroH and contributors",
+			"license": "GNU-V3.0",
+			"preprocessor": "stylus",
+			"vars": {
+				"stylus-deepdark-style": {
+					"type": "select",
+					"label": "Preset themes",
+					"name": "stylus-deepdark-style",
+					"value": null,
+					"default": "Deep-Dark",
+					"options": [
+						{
+							"name": "Deep-Dark",
+							"label": "Deep-Dark",
+							"value": "Deep-Dark"
+						},
+						{
+							"name": "Inspired-Dark",
+							"label": "Inspired-Dark",
+							"value": "Inspired-Dark"
+						},
+						{
+							"name": "Breeze-Dark",
+							"label": "Breeze-Dark",
+							"value": "Breeze-Dark"
+						},
+						{
+							"name": "HavocOS",
+							"label": "HavocOS",
+							"value": "HavocOS"
+						},
+						{
+							"name": "Arc-Dark",
+							"label": "Arc-Dark",
+							"value": "Arc-Dark"
+						},
+						{
+							"name": "Adapta-Nokto",
+							"label": "Adapta-Nokto",
+							"value": "Adapta-Nokto"
+						},
+						{
+							"name": "Adapta-Breath-Nokto",
+							"label": "Adapta-Breath-Nokto",
+							"value": "Adapta-Breath-Nokto"
+						},
+						{
+							"name": "Gruvbox-Dark",
+							"label": "Gruvbox-Dark",
+							"value": "Gruvbox-Dark"
+						},
+						{
+							"name": "Gruvbox-Light",
+							"label": "Gruvbox-Light",
+							"value": "Gruvbox-Light"
+						},
+						{
+							"name": "NierAutomata-Dark",
+							"label": "NierAutomata-Dark",
+							"value": "NierAutomata-Dark"
+						},
+						{
+							"name": "NierAutomata-Light",
+							"label": "NierAutomata-Light",
+							"value": "NierAutomata-Light"
+						},
+						{
+							"name": "Solarized-Dark",
+							"label": "Solarized-Dark",
+							"value": "Solarized-Dark"
+						},
+						{
+							"name": "Solarized-Light",
+							"label": "Solarized-Light",
+							"value": "Solarized-Light"
+						},
+						{
+							"name": "Vertex-Dark",
+							"label": "Vertex-Dark",
+							"value": "Vertex-Dark"
+						},
+						{
+							"name": "Mint-Y-Dark",
+							"label": "Mint-Y-Dark",
+							"value": "Mint-Y-Dark"
+						},
+						{
+							"name": "9anime",
+							"label": "9anime",
+							"value": "9anime"
+						},
+						{
+							"name": "Firefox-Dark",
+							"label": "Firefox-Dark",
+							"value": "Firefox-Dark"
+						},
+						{
+							"name": "Firefox-57",
+							"label": "Firefox-57",
+							"value": "Firefox-57"
+						},
+						{
+							"name": "Discord",
+							"label": "Discord",
+							"value": "Discord"
+						},
+						{
+							"name": "YouTube-Dark",
+							"label": "YouTube-Dark",
+							"value": "YouTube-Dark"
+						},
+						{
+							"name": "Black-and-White",
+							"label": "Black-and-White",
+							"value": "Black-and-White"
+						},
+						{
+							"name": "Yellow",
+							"label": "Yellow",
+							"value": "Yellow"
+						},
+						{
+							"name": "Yellow-2",
+							"label": "Yellow-2",
+							"value": "Yellow-2"
+						},
+						{
+							"name": "Ubuntu-Grey",
+							"label": "Ubuntu-Grey",
+							"value": "Ubuntu-Grey"
+						},
+						{
+							"name": "Ubuntu-Purple",
+							"label": "Ubuntu-Purple",
+							"value": "Ubuntu-Purple"
+						},
+						{
+							"name": "Orange",
+							"label": "Orange",
+							"value": "Orange"
+						},
+						{
+							"name": "Jisho",
+							"label": "Jisho",
+							"value": "Jisho"
+						},
+						{
+							"name": "Custom",
+							"label": "Custom",
+							"value": "Custom"
+						}
+					]
+				},
+				"colorRY": {
+					"type": "select",
+					"label": "Red/Yellow color",
+					"name": "colorRY",
+					"value": null,
+					"default": "Default",
+					"options": [
+						{
+							"name": "Default",
+							"label": "Default",
+							"value": "Default"
+						},
+						{
+							"name": "Solarized",
+							"label": "Solarized",
+							"value": "Solarized"
+						},
+						{
+							"name": "Gruvbox Dark",
+							"label": "Gruvbox Dark",
+							"value": "Gruvbox Dark"
+						},
+						{
+							"name": "Gruvbox Dark Intense",
+							"label": "Gruvbox Dark Intense",
+							"value": "Gruvbox Dark Intense"
+						},
+						{
+							"name": "Gruvbox Light",
+							"label": "Gruvbox Light",
+							"value": "Gruvbox Light"
+						},
+						{
+							"name": "Gruvbox Light Intense",
+							"label": "Gruvbox Light Intense",
+							"value": "Gruvbox Light Intense"
+						},
+						{
+							"name": "Custom",
+							"label": "Custom",
+							"value": "Custom"
+						}
+					]
+				},
+				"mainColor": {
+					"type": "color",
+					"label": "Custom main color",
+					"name": "mainColor",
+					"value": null,
+					"default": "rgb(54, 123, 240)",
+					"options": null
+				},
+				"mainBackground": {
+					"type": "color",
+					"label": "Custom main background",
+					"name": "mainBackground",
+					"value": null,
+					"default": "rgb(34, 36, 45)",
+					"options": null
+				},
+				"secondBackground": {
+					"type": "color",
+					"label": "Custom second background",
+					"name": "secondBackground",
+					"value": null,
+					"default": "rgb(36, 39, 48)",
+					"options": null
+				},
+				"hoverBackground": {
+					"type": "color",
+					"label": "Custom hover background",
+					"name": "hoverBackground",
+					"value": null,
+					"default": "rgb(78, 84, 103)",
+					"options": null
+				},
+				"mainText": {
+					"type": "color",
+					"label": "Custom main text",
+					"name": "mainText",
+					"value": null,
+					"default": "rgb(238, 238, 238)",
+					"options": null
+				},
+				"dimmerText": {
+					"type": "color",
+					"label": "Custom second text",
+					"name": "dimmerText",
+					"value": null,
+					"default": "rgb(204, 204, 204)",
+					"options": null
+				},
+				"editorBackground": {
+					"type": "color",
+					"label": "Custom editor background",
+					"name": "editorBackground",
+					"value": null,
+					"default": "rgb(47, 52, 63)",
+					"options": null
+				},
+				"selectBackground": {
+					"type": "color",
+					"label": "Custom selection background",
+					"name": "selectBackground",
+					"value": null,
+					"default": "rgb(60, 65, 80)",
+					"options": null
+				},
+				"colorShadow": {
+					"type": "color",
+					"label": "Custom shadow color",
+					"name": "colorShadow",
+					"value": null,
+					"default": "rgba(56, 60, 74, .3)",
+					"options": null
+				},
+				"colorEvenEntry": {
+					"type": "color",
+					"label": "Custom even color",
+					"name": "colorEvenEntry",
+					"value": null,
+					"default": "rgba(56, 60, 74, .4)",
+					"options": null
+				},
+				"colorRed": {
+					"type": "color",
+					"label": "Custom red color",
+					"name": "colorRed",
+					"value": null,
+					"default": "rgb(255, 102, 102)",
+					"options": null
+				},
+				"colorYellow": {
+					"type": "color",
+					"label": "Custom yellow color",
+					"name": "colorYellow",
+					"value": "rgb(255, 178, 102)",
+					"default": "rgb(255, 178, 102)",
+					"options": null
+				},
+				"use-modified-default": {
+					"type": "checkbox",
+					"label": "Adaptive syntax highlighting",
+					"name": "use-modified-default",
+					"value": null,
+					"default": "1",
+					"options": null
+				},
+				"stylus-syntax-theme": {
+					"type": "checkbox",
+					"label": "Stylus syntax highlighting",
+					"name": "stylus-syntax-theme",
+					"value": null,
+					"default": "1",
+					"options": null
+				},
+				"support_update-problem": {
+					"type": "checkbox",
+					"label": "Update problem tooltips",
+					"name": "support_update-problem",
+					"value": null,
+					"default": "1",
+					"options": null
+				},
+				"wrap-lint-msgs": {
+					"type": "checkbox",
+					"label": "Wrap lint messages",
+					"name": "wrap-lint-msgs",
+					"value": null,
+					"default": "1",
+					"options": null
+				},
+				"hide-scrollbar": {
+					"type": "checkbox",
+					"label": "Fix CM search scrollbar",
+					"name": "hide-scrollbar",
+					"value": null,
+					"default": "0",
+					"options": null
+				},
+				"custom_sidebar_width": {
+					"type": "text",
+					"label": "Sidebar width",
+					"name": "custom_sidebar_width",
+					"value": null,
+					"default": "280px",
+					"options": null
+				},
+				"fontSize": {
+					"type": "text",
+					"label": "Editor font size",
+					"name": "fontSize",
+					"value": null,
+					"default": "12px",
+					"options": null
+				},
+				"cursorWidth": {
+					"type": "select",
+					"label": "Cursor width",
+					"name": "cursorWidth",
+					"value": null,
+					"default": "Slim 1px",
+					"options": [
+						{
+							"name": "Slim 1px",
+							"label": "Slim 1px",
+							"value": "1px"
+						},
+						{
+							"name": "Wider 2px",
+							"label": "Wider 2px",
+							"value": "2px"
+						},
+						{
+							"name": "Wider+ 3px",
+							"label": "Wider+ 3px",
+							"value": "3px"
+						},
+						{
+							"name": "Block 7px",
+							"label": "Block 7px",
+							"value": "7px"
+						}
+					]
+				},
+				"cursorColor": {
+					"type": "select",
+					"label": "Cursor color",
+					"name": "cursorColor",
+					"value": null,
+					"default": "Deep-Dark",
+					"options": [
+						{
+							"name": "Deep-Dark",
+							"label": "Deep-Dark",
+							"value": "#00adee"
+						},
+						{
+							"name": "Inspired-Dark",
+							"label": "Inspired-Dark",
+							"value": "#5e8acc"
+						},
+						{
+							"name": "Breeze-Dark",
+							"label": "Breeze-Dark",
+							"value": "#3daee9"
+						},
+						{
+							"name": "Vertex-Dark",
+							"label": "Vertex-Dark",
+							"value": "#4080fb"
+						},
+						{
+							"name": "Arc-Dark",
+							"label": "Arc-Dark",
+							"value": "#5294E2"
+						},
+						{
+							"name": "Firefox-Dark",
+							"label": "Firefox-Dark",
+							"value": "#5675B9"
+						},
+						{
+							"name": "Firefox 57",
+							"label": "Firefox 57",
+							"value": "#4080fb"
+						},
+						{
+							"name": "Discord",
+							"label": "Discord",
+							"value": "#7289da"
+						},
+						{
+							"name": "YouTube Dark",
+							"label": "YouTube Dark",
+							"value": "#E52117"
+						},
+						{
+							"name": "Mint-Y-Dark",
+							"label": "Mint-Y-Dark",
+							"value": "#9ab87c"
+						},
+						{
+							"name": "9anime",
+							"label": "9anime",
+							"value": "#723f8c"
+						},
+						{
+							"name": "Black-and-White",
+							"label": "Black-and-White",
+							"value": "#fff"
+						},
+						{
+							"name": "Yellow",
+							"label": "Yellow",
+							"value": "#ffc700"
+						},
+						{
+							"name": "Yellow-2",
+							"label": "Yellow-2",
+							"value": "#ffc700"
+						},
+						{
+							"name": "Ubuntu-Grey",
+							"label": "Ubuntu-Grey",
+							"value": "#ef7847"
+						},
+						{
+							"name": "Ubuntu-Purple",
+							"label": "Ubuntu-Purple",
+							"value": "#ef7847"
+						},
+						{
+							"name": "Orange",
+							"label": "Orange",
+							"value": "#ff6905"
+						},
+						{
+							"name": "Jisho",
+							"label": "Jisho",
+							"value": "#ef7d6c"
+						},
+						{
+							"name": "Adapta-Nokto",
+							"label": "Adapta-Nokto",
+							"value": "#00bcd4"
+						},
+						{
+							"name": "Adapta-Breath Nokto",
+							"label": "Adapta-Breath Nokto",
+							"value": "#1abc9c"
+						},
+						{
+							"name": "Solarized",
+							"label": "Solarized",
+							"value": "#268bd2"
+						},
+						{
+							"name": "Gruvbox-Dark",
+							"label": "Gruvbox-Dark",
+							"value": "#fe8019"
+						},
+						{
+							"name": "Gruvbox-Light",
+							"label": "Gruvbox-Light",
+							"value": "#af3a03"
+						},
+						{
+							"name": "NierAutomata-Dark",
+							"label": "NierAutomata-Dark",
+							"value": "#fe8019"
+						},
+						{
+							"name": "NierAutomata-Light",
+							"label": "NierAutomata-Light",
+							"value": "#fe8019"
+						},
+						{
+							"name": "Custom",
+							"label": "Custom",
+							"value": "custom-cursor-color"
+						}
+					]
+				},
+				"custom-cursor-color": {
+					"type": "color",
+					"label": "Custom cursor color",
+					"name": "custom-cursor-color",
+					"value": null,
+					"default": "rgb(4, 249, 17)",
+					"options": null
+				}
+			}
+		},
+		"author": "RaitaroH and contributors",
+		"description": "Write thy themes in the dark. May the dark be kinder on thine eyes. (Stylus dark theme)",
+		"name": "Stylus DeepDark",
+		"originalDigest": "ed4ee6260c2f3c58b626d2d194993c4eda449011",
+		"_id": "9742dc0a-5477-4e65-8da6-d691502ea499",
+		"_rev": 1610506042006,
+		"id": 2
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1610034298669,
+		"name": "Google Sweet",
+		"sections": [
+			{
+				"code": ":root {\n    --bg-1: #161925;\n    --bg-2: #1E2232;\n    --bg-3: #293048;\n    --accent: #C50ED2;\n    --text-1: #FAF5FB;\n    --text-2: #666D88;\n    --text-link: #A3AAC8;\n    --header: #CFD0E2;\n\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg-2);\n}\n\nbody {\n    color: var(--text-1);\n    background: var(--bg-1);\n}\n\na {\n    color: var(--text-link);\n}\n\na:visited {\n    color: var(--text-2);\n}\n\n/*  SEARCH PAGE     */\n/*   header   */\n.gLFyf,\n.sbl1 {\n    color: var(--text-link);\n}\n\n.sbl2 {\n    color: var(--text-2);\n}\n\na.duf3 {\n    color: var(--text-link);\n}\n\n.wFncld,\n.lBbtTb {\n    color: var(--text-link);\n}\n\n.z1asCe {\n    fill: var(--text-link);\n}\n\n.minidiv .sfbg {\n    background: var(--bg-1);\n    border-bottom: 1px solid var(--accent);\n}\n\n.minidiv .RNNXgb {\n    background: var(--bg-2);\n}\n\n.sfbg {\n    background-color: var(--bg-1);\n}\n\n.RNNXgb {\n    background-color: var(--bg-2);\n    border: none;\n}\n\n.RNNXgb:hover,\n.sbfc .RNNXgb {\n    background-color: var(--bg-2);\n}\n\n.aajZCb {\n    background-color: var(--bg-2);\n}\n\n.FqnKTc,\n.xtSCL {\n    border-color: var(--text-link);\n}\n\n.sbhl {\n    background: var(--bg-3);\n}\n\n.gb_l .gb_mb,\n.gb_1b,\n.gb_tb {\n    color: var(--header);\n}\n\n.gb_l .gb_ob,\n.gb_sb.gb_sb,\n.gb_3b,\n.gb_wb.gb_wb,\n.gb_Db.gb_Db,\n.gb_ub.gb_ub {\n    color: var(--text-link);\n}\n\n.gb_kb > svg.gb_lb,\n.gb_xb > svg.gb_yb,\n.gb_zb > svg.gb_Ab {\n    color: var(--text-link);\n    fill: var(--text-link);\n}\n\n.gb_F {\n    background: var(--bg-2);\n    border: none;\n}\n\n.gb_l .gb_jb {\n    background: var(--bg-3);\n}\n\n.gb_sb.gb_sb,\n.gb_wb.gb_wb,\n.gb_Db.gb_Db,\n.gb_Eb.gb_Eb {\n    background: var(--bg-2);\n    border-color: var(--text-link);\n}\n\n.gb_sb:hover,\n.gb_Nb > .gb_Mb:hover,\n.gb_ub:hover,\n.gb_Db:hover {\n    background: var(--bg-3);\n}\n\n.gb_Cb,\n.gb_Jb {\n    border-color: var(--text-link);\n}\n\n/*   second header   */\n.EsIlz {\n    background-color: var(--bg-3);\n}\n\n.s1SShd .UnFsfe {\n    border-color: var(--accent);\n}\n\n.WGwSK {\n    color: var(--text-link);\n}\n\n.cp7THd {\n    color: var(--text-2);\n}\n\n.CNf3nf.wecD1d {\n    background-color: var(--bg-3) !important;\n    border-color: var(--text-link) !important;\n}\n\n.YPxNKd {\n    background-color: var(--bg-3);\n}\n\n.TXBhSe:not(:hover) {\n    color: var(--text-link);\n}\n\n.TXBhSe:hover {\n    color: var(--text-link);\n}\n\n.iJddsb {\n    fill: var(--text-link);\n}\n\n.hdtb-mitem a,\n.hdtb-mitem .hdtb-dd-b,\n.hdtb-mitem a,\n.GshZze,\n.zriOQb g-menu-item {\n    color: var(--text-link);\n}\n\n#hdtb-msb .hdtb-mitem.hdtb-msel {\n    color: var(--accent);\n    border-color: var(--accent);\n}\n\n.yg51vc {\n    background: var(--bg-1);\n}\n\n.cF4V5c {\n    background: var(--bg-2);\n}\n\n#hdtb {\n    border-color: var(--accent);\n}\n\n.GshZze:not(.hdtb-tl-sel):hover {\n    background-color: var(--bg-3);\n    color: var(--text-link);\n    border-color: var(--bg-3);\n}\n\n/*   third header   */\n.LHJvCe {\n    color: var(--text-2);\n}\n\n.hdtb-mn-hd {\n    color: var(--text-link);\n}\n\n.appbar {\n    background: var(--bg-1);\n}\n\n/*   main container   */\n.gJBeNe {\n    color: var(--header);\n}\n\n.dw-sb-cont .dw-sb-btn,\n.dw-sb-cont .dw-sbi {\n    background-color: var(--bg-2);\n    color: var(--text-2);\n    border-color: var(--text-link);\n}\n\n.dw-sb-cont .dw-sbi:focus {\n    border-color: var(--header);\n}\n\n.cfBJGe {\n    color: var(--text-link);\n}\n\n.mDj5wd {\n    color: var(--header);\n}\n\n.webanswers-webanswers_table__webanswers-table th {\n    color: var(--header);\n}\n\n.w13wLe {\n    color: var(--text-link);\n}\n\n.AYBNrd {\n    background-color: var(--bg-2);\n    border-color: var(--text-link);\n}\n\n.AYBNrd td {\n    border-color: var(--text-link);\n}\n\n.HIf9ae {\n    background-color: var(--bg-3);\n}\n\n.H73aad,\n.H73aad:hover {\n    background-color: var(--bg-3);\n    border-color: var(--text-link);\n}\n\n.jleFbf {\n    color: var(--text-link);\n}\n\n.IZACzd {\n    color: var(--text-link);\n}\n\n.truncation-information:link,\n.truncation-information:visited {\n    color: var(--text-link);\n}\n\n.EUjJDc {\n    color: var(--text-link);\n}\n\n.YsiKr.CNf3nf.wecD1d {\n    background-color: var(--bg-3) !important;\n    border-color: var(--text-link);\n}\n\n.lgJJud {\n    background-color: var(--bg-2);\n    border-color: var(--text-link);\n}\n\n.V2Zq0e {\n    color: var(--header);\n}\n\n.f3LoEf {\n    color: var(--text-link);\n}\n\n.EASEnb,\n.eEz1Rd {\n    border-color: var(--text-link);\n}\n\ncite,\ncite a:link,\ncite a:visited,\n.Ywxp6b,\n.YyVfkd {\n    color: var(--accent);\n}\n\n.dyjrff,\n.f,\n.uo4vr,\n.P7Vl4c .RCBpod {\n    color: var(--text-2);\n}\n\n.IsZvec,\n.aCOpRe em,\n.st em,\n.gyWzne,\n.wwUB2c,\n.wwUB2c .chJdMe,\n.hb8SAc,\n.BP43u,\n.cwUqwd {\n    color: var(--text-1);\n}\n\n.xgyIXd {\n    color: var(--text-2);\n}\n\n.dvDNH,\n.eJ7tvc,\n.JolIg,\n.kno-ecr-pt,\n.Ss2Faf,\n#rhs .nGydZ .garHBe,\n.hDeAhf {\n    color: var(--header);\n}\n\n.wUrVib,\n.Ss2Faf a,\n.rl_item_base .title,\n.Eegi6c,\na.fl:link,\n.fl a,\n.gl a:link {\n    color: var(--text-link);\n}\n\n.uDMnUc,\n.xtObwd,\n.GrfNd,\n.ooYbic,\n.oIcuye,\n.yxsAke,\n.OZ8wsd,\n.GlPvmc {\n    color: var(--text-2);\n}\n\n.z1asCe {\n    fill: var(--text-link);\n}\n\n.w8qArf .fl,\n.LMMXP {\n    color: var(--header) !important;\n}\n\n.aKcFGd,\n.k4DMHe .xXEKkb,\n.WpKAof,\n.AaVjTc a:link {\n    color: var(--text-link) !important;\n}\n\n.AUiS2,\n.kp-blk,\n.cv2VAd,\n.kLhEKe,\n.MGqjK {\n    background: var(--bg-2);\n    border-color: var(--text-link)\n}\n\n.YSlUOe,\n.Xeztj {\n    background: var(--bg-1);\n}\n\n.I6TXqe {\n    background: var(--bg-2);\n}\n\n.rhscol .I6TXqe {\n    border-color: var(--text-link);\n}\n\n.rl_item_base {\n    background: var(--bg-2);\n    border-color: var(--text-link);\n}\n\n.RJuLSb td {\n    border-color: var(--text-link) !important;\n}\n\n.VuHq7,\n.zmYuj,\n.jA1nid {\n    border-color: var(--text-link);\n}\n\n.I6TXqe div {\n    border-color: var(--text-link) !important;\n}\n\n.z1asCe,\n.YIMUJb {\n    fill: var(--text-link);\n}\n\n.xt8Uw {\n    color: var(--text-2);\n}\n\n.l2gNXd {\n    background: var(--accent);\n}\n\n.uVGhGc {\n    background: var(--bg-3);\n}\n\n.M4dUYb {\n    border-radius: 100%;\n}\n\n.cbphWd,\n.VibNM {\n    border-color: var(--text-link);\n}\n\n.WpKAof:hover {\n    background: var(--bg-3);\n}\n\n.MXl0lf {\n    background: var(--bg-3);\n    border-color: var(--text-link);\n}\n\n.MXl0lf:hover {\n    border-color: var(--header)\n}\n\n#rhs .kp-blk,\n.y8Jpof.pPLc9e.kpQuGf,\n.nm6nmc.l0jSyf.kpQuGf {\n    border-color: var(--text-link);\n}\n\n.y8Jpof:hover,\n.MXl0lf:hover {\n    background-color: var(--bg-3);\n}\n\n.pb5vrc {\n    background-color: var(--text-link);\n}\n\n.CNf3nf.LhCR5d {\n    border-color: var(--text-link);\n    background-color: var(--bg-3) !important;\n}\n\n.CNf3nf.LhCR5d:hover {\n    border-color: var(--header) !important;\n}\n\ntitle-with-lhs-icon .ekf0x {\n    color: var(--text-link);\n}\n\ntitle-with-lhs-icon:hover .ekf0x h3 {\n    color: var(--header);\n}\n\n.WGYX8 {\n    background-color: var(--bg-3);\n    border-color: var(--text-link);\n    color: var(--text-link);\n}\n\n.WGYX8:hover {\n    background-color: var(--bg-3);\n    border-color: var(--header);\n    color: var(--header);\n}\n\n.GHDvEf,\n.GHDvEf:hover,\n.GHDvEf.selected,\n.GHDvEf.selected:hover {\n    background-color: var(--bg-1);\n}\n\n.action-menu .mn-dwn-arw {\n    border-color: var(--accent) transparent;\n}\n\n.mmxugd {\n    color: var(--header);\n}\n\n/*   footer   */\n.b0KoTc {\n    color: var(--text-2);\n}\n\n#Wprf1b {\n    color: var(--header);\n}\n\n.smiUbb a,\n#swml a,\n.fbar p,\n.fbar a,\n#fsettl,\n#fsett a {\n    color: var(--text-link);\n}\n\n.f6F9Be {\n    background-color: var(--bg-2);\n    border-color: var(--bg-3);\n}\n\n.b2hzT {\n    border-color: var(--bg-3);\n}\n\n\n/*   MAIN PAGE   */\n#gb#gb a.gb_f,\n#gb#gb a.gb_g,\n#gb#gb span.gb_g {\n    color: var(--text-link)\n}\n\n.gb_sc {\n    filter: invert();\n}\n\n.tfB0Bf input[type=\"submit\"],\n.gbqfba {\n    background-color: var(--bg-2);\n    border-color: var(--text-link);\n    color: var(--text-link);\n}\n\n.tfB0Bf input[type=\"submit\"]:hover {\n    background-color: var(--bg-2);\n    border-color: var(--header);\n    color: var(--header);\n}",
+				"domains": [
+					"www.google.com"
+				]
+			}
+		],
+		"updateDate": 1610495147033,
+		"_id": "5967f32e-1104-4160-98df-83b9a673762d",
+		"_rev": 1610495147033,
+		"id": 3
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1610494076131,
+		"name": "Messenger",
+		"sections": [
+			{
+				"code": ":root {\n    --bg1: #161925;\n    --bg2: #1E2232;\n    --bg3: #293048;\n    --text1: #FAF5FB;\n    --text2: #CFD0E2;\n    --text3: #A3AAC8;\n    --text4: #666D88;\n    --accent: #C50ED2;\n\n    overflow: hidden !important;\n    background-color: var(--bg1);\n}\n\ninput::placeholder {\n    color: var(--text4) !important;\n}\n\nhtml,\nbody {\n    background-color: var(--bg1);\n    color: var(--text1);\n}\n\n/*  splashscreen    */\n._6s5d {\n    background-color: var(--bg1);\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    color: var(--text2);\n}\n\na {\n    color: var(--text3);\n}\n\na:visited {\n    color: var(--text4);\n}\n\np {\n    color: var(--text1);\n}\n\n.oo9gr5id {\n    color: var(--text2);\n}\n\n.hybvsw6c,\n.nred35xi {\n    background-color: var(--bg1);\n}\n\n.g6srhlxm {\n    background-color: var(--bg3);\n}\n\n.lm2lsiji::after {\n    border-color: var(--bg1);\n}\n\n.qbubdy2e {\n    fill: var(--bg1);\n}\n\n.buofh1pr.j83agx80.eg9m0zos.ni8dbmo4.cbu4d94t.gok29vw1 {\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg2);\n}\n\n.m9osqain {\n    color: var(--text4);\n}\n\n.b3i9ofy5 {\n    background-color: var(--bg2);\n}\n\n.a8c37x1j.ms05siws.hwsy1cff.b7h9ocf4 {\n    fill: var(--accent);\n}\n\n.tdjehn4e {\n    background-color: var(--bg1);\n}\n\n.bp9cbjyn.j83agx80.qypqp5cg.taijpn5t.l9j0dhe7.q676j6op svg,\n.bp9cbjyn.pq6dq46d.mudddibn.taijpn5t.l9j0dhe7.ciadx1gn svg {\n    fill: var(--accent) !important;\n}\n\n.j9ispegn.pmk7jnqg.k4urcfbm.datstx6m.lupvgy83.kr520xx4.mdpwds66.b2cqd1jy.n13yt9zj.eh67sqbx {\n    background-color: var(--accent);\n}\n\n.khkgorpb {\n    background-color: var(--bg2);\n}\n\n.hn33210v {\n    background-color: var(--bg3);\n}\n\n.oj68ptkr {\n    background-color: var(--accent);\n}\n\n.pwoa4pd7 {\n    background-color: var(--bg3);\n}\n\n.s1tcr66n {\n    border-color: var(--bg3);\n}\n\n.bafdgad4 {\n    box-shadow: 0 0 4px rgba(197, 14, 210, .18);\n}\n\n.pipptul6 {\n    color: var(--text4);\n}\n\n.m50y4xls {\n    fill: var(--text4);\n}\n\n.i224opu6 {\n    background-color: var(--bg3);\n}\n\n.cwj9ozl2 {\n    background-color: var(--bg2);\n}\n\n.np69z8it {\n    border-color: var(--bg2);\n}\n\n._2znk {\n    background-color: var(--bg2);\n}\n\n._1og- {\n    background-color: var(--bg3);\n    border-color: var(--bg1);\n}\n\n.sp_iUtGS-8M7tS {\n    filter: invert();\n}\n\n.sdxs9vve::after {\n    border-color: var(--bg1);\n}",
+				"domains": [
+					"www.messenger.com"
+				]
+			}
+		],
+		"updateDate": 1611870453731,
+		"_id": "1e4499a7-002e-4ffb-a8f0-565982006e65",
+		"_rev": 1611870453731,
+		"id": 4
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1610760523376,
+		"name": "Analiza 2",
+		"sections": [
+			{
+				"code": ":root {\n    --bg1: #161925;\n    --bg2: #1E2232;\n    --bg3: #293048;\n    --text1: #FAF5FB;\n    --text2: #CFD0E2;\n    --text3: #A3AAC8;\n    --text4: #666D88;\n    --accent: #C50ED2;\n}\n\nbody {\n    background-color: var(--bg1);\n    color: var(--text1);\n}",
+				"urlPrefixes": [
+					"http://imft.ftn.uns.ac.rs/~mila/Analiza2.html"
+				]
+			}
+		],
+		"updateDate": 1610760851190,
+		"_id": "f169280e-f28d-4d95-90d5-07bf9c5cbd5d",
+		"_rev": 1610760851190,
+		"id": 5
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1610992949463,
+		"name": "www.instagram.com",
+		"sections": [
+			{
+				"code": ":root {\n    --bg1: #161925;\n    --bg2: #1E2232;\n    --bg3: #293048;\n    --text1: #FAF5FB;\n    --text2: #CFD0E2;\n    --text3: #A3AAC8;\n    --text4: #666D88;\n    --accent: #C50ED2;\n    \n    --bg3-half: #29304880;\n\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg1) !important;\n    background-color: var(--bg1);\n}\n\na,\na:visited {\n    color: var(--text3);\n}\n\nbody {\n    background-color: var(--bg1) !important;\n}\n\nbody,\nbutton,\ninput,\ntextarea {\n    color: var(--text1);\n}\n\n#react-root span svg {\n    fill: var(--text3) !important;\n}\n\n/*  FEED    */\n.pbgfb {\n    color: var(--text4);\n}\n\n.Di7vw {\n    background-color: var(--bg2);\n    border-color: var(--bg2);\n}\n\n._8-yf5 {\n    fill: var(--text3);\n}\n\n.s4Iyt {\n    filter: invert();\n}\n\n._lz6s {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n.x3qfX {\n    background-color: var(--bg2);\n}\n\n.XTCLo {\n    border-color: var(--bg2);\n    color: var(--text2);\n}\n\n.eebAO {\n    color: var(--text3);\n}\n\n.puCyQ {\n    color: var(--text3);\n}\n\n.gmFkV,\n.gmFkV:visited,\n.gmFkV:active,\n.gmFkV:focus,\n.gmFkV:hover {\n    color: var(--text3);\n}\n\n._0PwGv {\n    color: var(--text4);\n}\n\na.FPmhX.MBL3Z {\n    color: var(--text3);\n}\n\n.SkY6J .K5OFK,\n.SkY6J .l93RR,\n.SkY6J .DINPA {\n    color: var(--text4);\n}\n\n.yWX7d,\n.yWX7d:visited,\na.yWX7d,\na.yWX7d:visited {\n    color: var(--accent);\n}\n\n.KV-D4 {\n    color: var(--text3);\n}\n\n.yWX7d._8A5w5,\na.yWX7d._8A5w5,\na.yWX7d._8A5w5:visited {\n    color: var(--text3);\n}\n\na.O4GlU,\na.O4GlU:visited {\n    color: var(--text4);\n}\n\n.c-Yi7,\n.c-Yi7:visited {\n    color: var(--text4);\n}\n\n.o64aR,\n._3Laht {\n    background-color: var(--bg1);\n}\n\n.VideM {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n._8UZ6e {\n    background-color: var(--bg1);\n}\n\n.tHaIX {\n    background-color: var(--bg1);\n}\n\n._3MPWk,\n._8Rm4L,\n.zMhqu,\n.KQA-S,\n.AcVnq,\n._1MzIy {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n.UE9AK {\n    border-color: var(--bg3);\n}\n\n.sH9wk {\n    border-color: var(--bg3);\n}\n\n.Ypffh {\n    color: var(--text2);\n}\n\n.cqXBL,\n.cqXBL:visited {\n    color: var(--text3);\n}\n\n.eLAPa {\n    background-color: var(--bg2);\n}\n\n.drKGC {\n    top: 36px;\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n.uyeeR {\n    color: var(--text3);\n}\n\n.Fy4o8 {\n    color: var(--text2);\n}\n\n.JvDyy {\n    background-color: var(--bg3);\n}\n\n.yCE8d {\n    border-color: var(--bg3);\n}\n\n.drKGC::after {\n    border-color: transparent transparent var(--bg2) transparent;\n}\n\n.fuqBx {\n    scrollbar-width: none;\n}\n\n/*  STORIES     */\n.vUg3G {\n    background-color: var(--bg1);\n}\n\n/*  POST PAGE   */\n.JyscU ._97aPb.wKWK0 {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n.ltEKP .QBXjJ {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n.JyscU.ePUX4 .UE9AK {\n    border-color: var(--bg3);\n}\n\n.JyscU.ePUX4 .eo2As {\n    border-color: var(--bg3);\n}\n\n.JyscU .Slqrh {\n    border-color: var(--bg3);\n}\n\n.W4P49 {\n    background-color: var(--accent);\n}\n\n._1XyCr {\n    background-color: var(--bg2);\n}\n\n/*  POST MODAL  */\n.s2MYR {\n    background-color: var(--bg2);\n}\n\n.HaS-3 {\n    background: var(--bg3);\n}\n\n.jdnLC {\n    background-color: var(--bg2);\n}\n\n._4l6NB {\n    background: var(--bg3-half);\n    border-radius: 50%;\n}\n\n/*  CHAT    */\n.N9abW,\n.frMpI {\n    scrollbar-width: thin;\n}\n\n.glyphsSpriteDirect__outline__96,\n.glyphsSpriteDownload_2FAC {\n    filter: invert();\n}\n\n.y3zKF:not(.yWX7d),\na.y3zKF:not(.yWX7d),\na.y3zKF:not(.yWX7d):visited {\n    background-color: var(--bg3);\n}\n\n.L3NKy,\na.L3NKy,\na.L3NKy:visited {\n    color: var(--text3);\n}\n\n.t30g8,\n.S-mcP,\n.DPiy6,\n.N9abW {\n    background-color: var(--bg1);\n}\n\n.-qQT3:hover,\n.QOqBd {\n    background-color: var(--bg2);\n}\n\n._6FEQj {\n    background-color: var(--bg3);\n}\n\n.pV7Qt,\n.S-mcP,\n.oNO81,\n.CMoMH,\n.X3a-9,\n.BY1C7,\n._7zBYT,\n.LTpe2,\n.pV7Qt {\n    border-color: var(--bg3);\n}\n\n.pV7Qt,\n.S-mcP,\n.oNO81,\n.CMoMH,\n.X3a-9,\n.BY1C7,\n._7zBYT,\n.LTpe2 {\n    border-color: var(--bg3);\n}\n\n._9BIwZ {\n    background-color: transparent;\n    border-color: transparent;\n}\n\n.m7ETg {\n    color: var(--text2);\n}\n\n._01UL2 {\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n    scrollbar-width: none;\n}\n\n.TOh1s {\n    background: linear-gradient(to bottom, transparent 0%, var(--bg2) 100%);\n}\n\n/*  NOTIFICATIONS   */\n.yrJyr,\n.yrJyr:visited {\n    color: var(--text3);\n}\n\n.YFq-A {\n    color: var(--text2);\n}\n\n.HsXaJ {\n    color: var(--text4);\n}\n\n.PUHRj::after {\n    border-color: var(--bg3);\n}\n\n.f7Bj3 {\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg2);\n}\n\n.AvhYw {\n    background-color: var(--bg2);\n    border-color: var(--bg2);\n}\n\n/*  PROFILES    */\n._8A5w5,\na._8A5w5,\na._8A5w5:visited {\n    border-color: var(--text3);\n}\n\n.g47SY {\n    color: var(--text2);\n}\n\n.zwlfE {\n    color: var(--text3);\n}\n\n.eXle2 {\n    color: var(--text3);\n}\n\na._9VEo1,\na._9VEo1:visited {\n    color: var(--text3);\n}\n\n.T-jvg {\n    border-color: var(--accent);\n}\n\n.fx7hk {\n    border-color: var(--bg3);\n}\n\n._32eiM,\n._32eiM:visited {\n    color: var(--text3);\n}\n\n.-fzfL {\n    background-color: var(--bg1);\n    border-color: var(--text3);\n}\n\n.glyphsSpriteFriend_Follow,\n.coreSpriteDropdownArrowGrey9,\n.coreSpriteDropdownArrowWhite,\n.coreSpriteDismissLarge {\n    filter: invert();\n}\n\n.tc8A9 {\n    color: var(--text4);\n}\n\n.Qj3-a,\n.Qj3-a:visited {\n    color: var(--text3);\n}\n\n._7cyhW {\n    color: var(--text2);\n}\n\n.hUQXy,\n.hUQXy:visited {\n    color: var(--accent);\n}\n\n.Rebts {\n    color: var(--text2);\n}\n\n._41KYi,\n.NP414 {\n    border-color: var(--bg3);\n}\n\n.NP414,\n.NP414::before,\n._41KYi {\n    background-color: var(--bg1);\n}",
+				"domains": [
+					"www.instagram.com"
+				]
+			}
+		],
+		"updateDate": 1611329927021,
+		"_id": "624c11cb-c4da-46a2-853b-a02ecc3717c7",
+		"_rev": 1611329927021,
+		"id": 6
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1611707368567,
+		"name": "Tv Time",
+		"sections": [
+			{
+				"code": ":root {\n    --bg1: #161925;\n    --bg2: #1E2232;\n    --bg3: #293048;\n    --text1: #FAF5FB;\n    --text2: #CFD0E2;\n    --text3: #A3AAC8;\n    --text4: #666D88;\n    --accent: #FFD90E;\n\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg1);\n}\n\nbody {\n    color: var(--text1);\n}\n\nbody.white {\n    background-color: var(--bg1);\n}\n\n/*  HOME    */\n.page-column section h1 {\n    color: var(--text2);\n}\n\n.page-column section h1 .nb-items {\n    color: var(--text4);\n}\n\n.fanarts-list > li .nav a,\n.posters-list > li .nav a {\n    color: var(--text3);\n}\n\n.posters-list > li .poster-details h2 a {\n    color: var(--text3);\n}\n\n.posters-list > li .poster-details h2 span {\n    color: var(--text4);\n}\n\n.posters-list > li .poster-details .secondary-link {\n    color: var(--text3);\n}\n\n#to-watch .show-all {\n    color: var(--accent);\n}\n\n.page-center {\n    background-color: var(--bg1);\n}\n\n/*  HOME SIDEBAR LEFT   */\n.page-left > .scrollable {\n    scrollbar-width: none;\n}\n\n#get-the-app,\nfooter.footer {\n    display: none;\n}\n\n.sidebar-link {\n    color: var(--text4);\n}\n\n.sidebar-link:hover {\n    color: var(--text4);\n}\n\n#global-search input {\n    color: var(--text1);\n    background-color: var(--bg1);\n    border-color: var(--bg1);\n}\n\n.header .menu > li a,\n.page-left .menu > li a {\n    color: var(--text3);\n}\n\n.header .menu > li a:hover,\n.header .menu > li.active a,\n.page-left .menu > li a:hover,\n.page-left .menu > li.active a {\n    color: var(--text2);\n}\n\n.header .menu > li a i,\n.page-left .menu > li a i {\n    color: var(--text3);\n}\n\n.header .menu > li.active a i,\n.page-left .menu > li.active a i {\n    color: var(--text2);\n}\n\n.page-left section {\n    border-color: var(--bg3);\n}\n\n#user-nav .alt-user-nav a {\n    color: var(--text3);\n}\n\n#user-nav .alt-user-nav a .badge {\n    color: var(--text4);\n}\n\n.page-left .signout-link {\n    color: var(--text3);\n}\n\n.page-left {\n    background-color: var(--bg2);\n}\n\n/*  EPISODE */\n#episode-details .episode-infos .basic-infos {\n    color: var(--text2);\n}\n\n#episode-details .episode-infos .overview {\n    color: var(--text1);\n}\n\n#episode-details .episode-infos {\n    background-color: var(--bg1);\n}\n\n#episode-details .episode-infos.extended {\n    border-color: var(--bg3);\n}\n\n#episode-details #content .not-watched-episode .stats-list .stat-item {\n    color: var(--text2);\n    border-color: var(--text2);\n}\n\n#episode-details #content .not-watched-episode .not-watched-infos {\n    border-color: var(--text2);\n}\n\n#episode-details #content .not-watched-episode .not-watched-infos p {\n    color: var(--text1);\n}\n\n#episode-details #content .not-watched-episode .not-watched-infos p.intro {\n    color: var(--text2);\n}\n\n#episode-details #content .not-watched-episode .display-btn {\n    color: var(--text3);\n    background-color: var(--bg3);\n    border-color: var(--text3);\n}\n\nh2.title,\nsection .title {\n    color: var(--text4);\n}\n\n.comment form.post > .top .holder,\n.mentions-input-box {\n    background-color: var(--bg2);\n}\n\n.comment form.post > .top .holder {\n    border-color: var(--bg3);\n}\n\n\n.comment form.post > .top .holder:not(.extended)::after {\n    border-top-color: var(--bg2);\n}\n\n.comment form.post > .top .holder:not(.extended)::before {\n    border-top-color: var(--bg3);\n}\n\n.new-comment .post .holder .react-with-pictures-label i {\n    background-color: var(--bg3);\n    color: var(--text3);\n}\n\n.comments-filters li a.active,\n.comments-filters li a:hover {\n    color: var(--text2);\n    background-color: var(--bg3);\n}\n\n.comments-filters li a {\n    color: var(--text3);\n    background-color: var(--bg2);\n}\n\n#community-feed-container .filters .dropdown,\n#discussion .filters .dropdown,\n#seasons .filters .dropdown {\n    background-color: var(--bg3);\n}\n\n#community-feed-container .filters .current,\n#discussion .filters .current,\n#seasons .filters .current {\n    color: var(--text3);\n}\n\n.comment .post > .top .holder .author-label,\n.comment .post > .top .holder .author-label a {\n    color: var(--text3);\n}\n\n.comment .post .author-level {\n    color: var(--accent);\n}\n\n.comment .post > .top .holder .comment-date {\n    color: var(--text4);\n}\n\n.comment .post > .top .holder blockquote p {\n    color: var(--text1);\n}\n\n.comment .post .options {\n    color: var(--text2);\n    border-color: var(--bg3);\n}\n\n.comment .post .options .reply-link {\n    color: var(--text2);\n}\n\n.comment .post .options .like-option .like-btn,\n.comment .post .options .like-option .like-label,\n.community-feed-list .story .options .like-option .like-btn,\n.community-feed-list .story .options .like-option .like-label {\n    color: var(--text3);\n}\n\n.comment .reply .author-label a {\n    color: var(--text3);\n}\n\n.comment .reply > .holder blockquote p {\n    color: var(--text1);\n}\n\n.comment .reply .options .like-option .like-btn,\n.comment .reply .options .like-option .like-label,\n.comment .reply .options .del-btn,\n.comment .reply .options .report-btn {\n    color: var(--text3);\n}\n\n/*  article */\n.comment:not(.new-comment) .post,\n.comment .sub-comment {\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n.comment .reply:not(form) {\n    border-color: var(--bg3);\n}\n\n.comment form.reply > .holder {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n.comment form.reply > .holder textarea {\n    background-color: var(--bg1);\n}\n\n.episode-rate {\n    color: var(--accent);\n}\n\n.right section .intro {\n    color: var(--text1);\n}\n\n#episode-details.episode .episode-main .emotions li a {\n    color: var(--text3);\n}\n\n#episode-details.episode .episode-main .emotions li a:hover {\n    color: var(--text2);\n}\n\n.cast .actor-item .content h3 {\n    color: var(--text2);\n}\n\n#content .content-container .right {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n#content .content-container .right section {\n    border-color: var(--bg3);\n}\n\n#episode-details.episode .episode-main .emotions li a:hover,\n#episode-details.episode .episode-main .emotions li.active a {\n    background-color: var(--bg1);\n}\n\n#episode-details.episode .episode-main .emotions li .emotion-icon {\n    color: var(--text3);\n}\n\n#episode-details.episode .episode-main .emotions li a:hover .emotion-icon,\n#episode-details.episode .episode-main .emotions li.active .emotion-icon,\n#show-details.show .show-main .emotions:not(.side) li.most .emotion-icon {\n    color: var(--bg2);\n}\n\n#episode-details.episode .episode-main .emotions li a:hover,\n#episode-details.episode .episode-main .emotions li.active a {\n    border-color: var(--accent);\n}\n\n#episode-details.episode .episode-main .emotions li a:hover,\n#episode-details.episode .episode-main .emotions li.active a {\n    color: var(--text2);\n}\n\n.followers img {\n    border-color: transparent;\n}\n\n#episode-details.episode .followers,\n#show-details.show .show-nav .followers {\n    color: var(--text4);\n}\n\n/*  SHOW    */\n#show-details .basic-infos {\n    color: var(--text2);\n}\n\n#show-details .overview {\n    color: var(--text1);\n}\n\n#show-details.show .show-nav {\n    background-color: var(--bg1);\n    border-color: var(--bg3);\n}\n\n#show-details .seasons .episode-wrapper .infos a,\n#show-details .seasons .episode-wrapper .infos:hover i.icon-play-circle {\n    color: var(--text3);\n}\n\n#show-details .seasons .episode-wrapper.odd {\n    background-color: var(--bg2);\n}\n\n#show-details .seasons .episode-wrapper span.episode-air-date {\n    color: var(--text4);\n}\n\n#show-details .seasons .episode-wrapper.current .infos a,\n#show-details .seasons .episode-wrapper.current .infos:hover i.icon-play-circle {\n    color: var(--bg2);\n}",
+				"domains": [
+					"www.tvtime.com"
+				]
+			}
+		],
+		"updateDate": 1611882920512,
+		"_id": "e5a24372-ef54-49e1-92c0-76ab4139ef47",
+		"_rev": 1611882920513,
+		"id": 7
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1611883574904,
+		"name": "Wikipedia",
+		"sections": [
+			{
+				"code": ":root {\n    --bg1: rgb(22, 25, 37);\n    --bg2: rgb(30, 34, 50);\n    --bg3: rgb(41, 48, 72);\n    --text1: rgb(250, 245, 251);\n    --text2: rgb(207, 208, 226);\n    --text3: rgb(163, 170, 200);\n    --text4: rgb(102, 109, 136);\n    --accent: rgb(197, 14, 210);\n\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg1);\n}\n\nhtml,\nbody {\n    color: var(--text1);\n    background-color: var(--bg1);\n}\n\np {\n    color: var(--text1);\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    color: var(--text2);\n}\n\na {\n    color: var(--text3);\n}\n\n.vector-menu-portal .body li a,\n.vector-menu-portal .vector-menu-content li a {\n    color: var(--text3);\n}\n\n.vector-menu-portal h3 {\n    color: var(--text2);\n    background-image: linear-gradient(to right, rgba(200, 204, 209, 0) 0, var(--accent) 33%, var(--accent) 66%, rgba(200, 204, 209, 0) 100%);\n}\n\n#p-lang .uls-settings-trigger {\n    filter: invert();\n}\n\n.mw-ui-button {\n    color: var(--text3);\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n.mw-ui-button:hover {\n    color: var(--text2);\n    background-color: var(--bg3);\n    border-color: var(--bg3);\n}\n\n.wb-langlinks-link > a:link,\n.wb-langlinks-link > a:visited {\n    color: var(--text3) !important;\n}\n\n.wb-langlinks-link > a::before {\n    filter: invert();\n}\n\n.mw-wiki-logo {\n    filter: invert();\n}\n\n#pt-anonuserpage {\n    color: var(--text2);\n}\n\n.vector-menu-tabs .selected a,\n.vector-menu-tabs .selected a:visited {\n    color: var(--text2);\n}\n\n.vector-menu-tabs li a {\n    color: var(--text3);\n}\n\n#mw-page-base {\n    background-image: linear-gradient(to bottom, var(--bg1) 50%, var(--bg1) 100%);\n}\n\n.vector-menu-tabs li {\n    background: var(--bg2);\n}\n\n.vector-menu-tabs .selected {\n    background-color: var(--bg3);\n}\n\n.vector-menu-tabs,\n.vector-menu-tabs a,\n#mw-head .vector-menu-dropdown h3 {\n    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, var(--accent) 100%)\n}\n\nh1,\nh2 {\n    border-color: var(--accent);\n}\n\n.mw-body,\n.parsoid-body {\n    color: var(--accent);\n}\n\n.fn img {\n    filter: invert();\n}\n\n.toctogglelabel {\n    color: var(--accent);\n}\n\n.tocnumber {\n    color: var(--text4);\n}\n\n.mw-body,\n.parsoid-body {\n    background-color: var(--bg1);\n}\n\n.mw-body {\n    border-color: var(--accent);\n}\n\n#searchInput {\n    background-color: var(--bg2);\n    color: var(--text1);\n    border-color: var(--bg3);\n}\n\n#searchButton {\n    filter: invert();\n}\n\n#simpleSearch:hover #searchInput {\n    border-color: var(--accent);\n}\n\n.mwe-popups-container {\n    background-color: var(--bg2) !important;\n}\n\n.infobox {\n    color: var(--text2);\n}\n\n.mw-parser-output a.extiw:visited,\n.mw-parser-output a.external:visited {\n    color: var(--accent);\n}\n\n.infobox {\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n.mw-collapsible.mw-made-collapsible.mw-collapsed div {\n    background-color: var(--bg2) !important;\n}\n\n.toc,\n.toccolours,\ndiv.thumbinner {\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n.infobox.vevent.haudio th {\n    background-color: var(--bg3) !important;\n}\n\n.wikitable.floatright {\n    color: var(--text2);\n    background-color: var(--bg2);\n}\n\n.wikitable.floatright th {\n    background-color: var(--bg3) !important;\n}\n\n.wikitable {\n    color: var(--text2);\n    background-color: var(--bg2);\n}\n\n.wikitable th {\n    background-color: var(--bg3) !important;\n}\n\n.tracklist .tlheader.mbox-text {\n    background-color: var(--bg1) !important;\n}\n\n.tracklist tr {\n    background-color: var(--bg2) !important;\n}\n\n.tracklist th {\n    background-color: var(--bg3) !important;\n}",
+				"domains": [
+					"wikipedia.org"
+				]
+			}
+		],
+		"updateDate": 1611935712397,
+		"_id": "fd009136-7990-45a5-9673-044b03e6175d",
+		"_rev": 1611935712397,
+		"id": 8
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1611887267340,
+		"name": "www.youtube.com",
+		"sections": [
+			{
+				"code": ":root {\n    --bg1: rgb(22, 25, 37);\n    --bg2: rgb(30, 34, 50);\n    --bg3: rgb(41, 48, 72);\n    --text1: rgb(250, 245, 251);\n    --text2: rgb(207, 208, 226);\n    --text3: rgb(163, 170, 200);\n    --text4: rgb(102, 109, 136);\n    --accent: rgb(255, 0, 0);\n\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg1);\n}\n\n#guide-inner-content.ytd-app {\n    scrollbar-width: none;\n}\n\n.playlist-items.ytd-playlist-panel-renderer {\n    scrollbar-width: thin;\n}",
+				"domains": [
+					"www.youtube.com"
+				]
+			}
+		],
+		"updateDate": 1611887516664,
+		"_id": "68dfd295-041a-4b83-86bd-40faba654fbe",
+		"_rev": 1611887516664,
+		"id": 9
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1611935867323,
+		"name": "Archlinux",
+		"sections": [
+			{
+				"code": ":root {\n    --bg1: rgb(22, 25, 37);\n    --bg2: rgb(30, 34, 50);\n    --bg3: rgb(41, 48, 72);\n    --text1: rgb(250, 245, 251);\n    --text2: rgb(207, 208, 226);\n    --text3: rgb(163, 170, 200);\n    --text4: rgb(102, 109, 136);\n    --accent: rgb(0, 136, 204);\n\n    scrollbar-width: thin;\n    scrollbar-color: var(--accent) var(--bg1);\n}\n\nhtml,\nbody {\n    color: var(--text1);\n    background-color: var(--bg1);\n}\n\np {\n    color: var(--text1);\n}\n\na,\na:hover {\n    color: var(--text3);\n}\n\na:visited {\n    color: var(--text4);\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    color: var(--text2);\n}\n\n#archnavbar {\n    background-color: var(--bg2) !important;\n}\n\n#archnavbar ul#archnavbarlist li a {\n    color: var(--text3);\n}\n\nnav.vector-menu-tabs li.selected {\n    background-color: var(--bg3);\n    border-bottom: none;\n    border-color: var(--accent);\n}\n\n.vector-menu-tabs,\n.vector-menu-tabs a,\n#mw-head .vector-menu-dropdown h3 {\n    background-image: linear-gradient(to bottom, rgba(0, 136, 204, 0) 0, var(--accent) 100%);\n}\n\n#content {\n    background-color: var(--bg1);\n    border-color: var(--accent);\n}\n\n#content a:not(.new),\n#mw-navigation li:not(.new) a:not(.new),\n#mw-panel li:not(.new) a:not(.new),\n#column-one li:not(.new) a:not(.new),\n#footer a:not(.new) {\n    color: var(--text3) !important;\n}\n\n#content a:not(.new):hover,\n#mw-navigation li:not(.new) a:not(.new):hover,\n#mw-panel li:not(.new) a:not(.new):hover,\n#column-one li:not(.new) a:not(.new):hover,\n#footer a:not(.new):hover {\n    color: var(--text2) !important;\n}\n\n.portal h3,\n.vector-menu-portal h3 {\n    color: var(--text2);\n    background-image: linear-gradient(to right, rgba(200, 204, 209, 0) 0, var(--accent) 33%, var(--accent) 66%, rgba(200, 204, 209, 0) 100%);\n}\n\n#searchInput {\n    background-color: var(--bg2);\n    color: var(--text1);\n    border-color: var(--bg3);\n}\n\n#searchInput:focus,\n#simpleSearch:hover #searchInput:focus {\n    background-color: var(--bg2);\n    border-color: var(--accent);\n    box-shadow: none;\n}\n\n#content table,\n#content h1,\n#content h2,\n#content h3,\n#content h4,\n#content h5,\n#content pre,\n#content code,\n#content tt {\n    color: var(--text2);\n}\n\nh1,\nh2 {\n    border-color: var(--accent);\n}\n\n.tocnumber {\n    color: var(--text4);\n}\n\n.toctogglelabel {\n    color: var(--accent);\n}\n\n#toc,\n.toc,\n.mw-warning,\n.toccolours {\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n.catlinks {\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n#content pre,\n#content code,\n#content tt {\n    background-color: var(--bg2);\n}\n\ndiv.box {\n    background-color: var(--bg2);\n    border-color: var(--bg3);\n}\n\n#pkgdetails #metadata h3 {\n    background-color: var(--bg3);\n}",
+				"domains": [
+					"archlinux.org"
+				]
+			}
+		],
+		"updateDate": 1611937710466,
+		"_id": "c23115e3-dd2c-42dd-8bd5-00f9f4b4b288",
+		"_rev": 1611937710466,
+		"id": 10
+	}
+]
