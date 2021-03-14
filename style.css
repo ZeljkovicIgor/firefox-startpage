@@ -39,7 +39,7 @@ body {
     cursor: pointer;
 }
 
-.weather {
+.weather, .todos {
     font-size: 40px;
     font-family: 'Jura', sans-serif;
     color: #A3AAC8;

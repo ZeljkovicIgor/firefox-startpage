@@ -1,4 +1,4 @@
-import { getSun } from "./sun.js";
+import { isDay } from "./sun.js";
 
 setRandomBackground();
 
@@ -10,15 +10,4 @@ function setRandomBackground() {
 
     body.style.background = `url('./backgrounds/${theme}/${randomBackgroundName}.gif')`;
     body.style.backgroundSize = 'cover';
-}
-
-function isDay() {
-    var sun = getSun();
-    var hourNow = new Date().getHours();
-
-    if (hourNow > Math.round(sun.sunrise) && hourNow < Math.round(sun.sunset)) {
-        return true;
-    }
-
-    return false;
 }

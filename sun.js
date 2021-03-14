@@ -7,6 +7,8 @@ const PI = Math.PI;
 const time_zone = 1;
 
 function calculateSunriseSunset() {
+    console.log('Calculating sunrise and sunset times...');
+    
     let B = 360 / 365 * (dayOfYear() - 81) * PI / 180;
     let EoT = 9.87 * Math.sin(2 * B) - 7.53 * Math.cos(B) - 1.5 * Math.sin(B);
     var LSTM = 15 * time_zone;
@@ -59,4 +61,15 @@ function getSun() {
     return sun;
 }
 
-export { getSun };
+function isDay() {
+    var sun = getSun();
+    var hourNow = new Date().getHours();
+
+    if (hourNow > Math.round(sun.sunrise) && hourNow < Math.round(sun.sunset)) {
+        return true;
+    }
+
+    return false;
+}
+
+export { getSun, isDay };
