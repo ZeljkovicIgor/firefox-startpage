@@ -5,7 +5,7 @@ const BASE_URL = "http://api.weatherbit.io/v2.0/current";
 const LAT_LONG = "?lat=45.267136&lon=19.833549"
 
 
-function setWeatherDiv(temperature) {
+function showWeather(temperature) {
     var weatherDiv = document.getElementsByClassName('weather')[0];
     const degreeSymbol = "&#176";
     
@@ -34,4 +34,4 @@ function getWeather() {
     return weather;
 }
 
-export { getWeather, setWeatherDiv }
+export { getWeather, showWeather }

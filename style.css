@@ -55,3 +55,8 @@ body {
     opacity: 70%;
     z-index: 1;
 }
+
+.todos-holder {
+    color: #A3AAC8;
+    font-size: 40px;
+}

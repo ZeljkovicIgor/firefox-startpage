@@ -1,31 +1,50 @@
-const todos = [
-    'one',
-    'two',
-    'three'
-];
+showTodos();
 
-setTodosDiv();
-
-function setTodosDiv() {
+function showTodos() {
     var todosDiv = document.getElementsByClassName('todos-holder')[0];
-    
-    todosDiv.innerHTML = Todos();
+
+    todosDiv.innerHTML = '<ul>' + todosHtml() + '</ul>';
 }
 
-function Todo(text) {
-    return (
-        '<li>' + text + '</li>'
-    );
+function todosHtml() {
+    var todos = findTodos();
+
+    return todos.reverse().reduce((acc, todo) => {
+        return acc += '<li>' + todo + '</li>'
+    }, '');
 }
 
-function Todos() {
-    var finalTodos = '';
+var newTodoButton = document.getElementById('new-todo-button');
+newTodoButton.addEventListener('click', function (e) {
+    var text = document.getElementById('new-todo-text').value;
 
-    todos.forEach(todo => {
-        finalTodos += Todo(todo);
-    });
+    addTodo(text);
+});
 
-    return (
-        '<ul class="todos">' + finalTodos + '</ul>'
-    );
+function addTodo(value) {
+    var allTodos = findTodos();
+
+    allTodos.push(value);
+
+    saveTodos(allTodos);
+    showTodos();
 }
+
+function saveTodos(todos) {
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function findTodos() {
+    var todos = localStorage.getItem('todos');
+
+    if (!todos) {
+        localStorage.setItem('todos', JSON.stringify([]));
+
+        findTodos();
+    }
+
+    return JSON.parse(todos);
+}
+
+// update
+// delete

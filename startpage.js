@@ -1,6 +1,6 @@
 import { isDay } from "./sun.js";
 
-setRandomBackground();
+// setRandomBackground();
 
 function setRandomBackground() {
     var theme = isDay() ? 'day' : 'night';
