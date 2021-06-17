@@ -25,7 +25,7 @@ function getWeather() {
         fetch(url)
         .then(response => response.json())
         .then(({data}) => {
-            setWeatherDiv(Math.floor(data[0].temp))
+            showWeather(Math.floor(data[0].temp))
     
             localStorage.setItem('weather', JSON.stringify(data[0]));
         })

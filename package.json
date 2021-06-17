@@ -1,0 +1,22 @@
+{
+  "name": "startpage",
+  "version": "1.0.0",
+  "description": "Just a startpage for personal use where I test out some features/styles like startpage todo lists, weather API, links to most visited sites, backgrounds changing depending on time of the day, weather etc. Obviously most of this code will be awful meaning I'll probably have to refactor it some day cuz I'm embarrassed.",
+  "main": "startpage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeljkovicIgor/firefox-startpage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeljkovicIgor/firefox-startpage/issues"
+  },
+  "homepage": "https://github.com/ZeljkovicIgor/firefox-startpage#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  }
+}
