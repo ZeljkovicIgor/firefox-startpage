@@ -1,13 +1,15 @@
-function isUpdateReady(updateName, currentTime) {
-    var lastSunUpdate = localStorage.getItem(updateName);
+const utils = (function () {
+    function isUpdateReady(updateName, currentTime) {
+        var lastSunUpdate = localStorage.getItem(updateName);
 
-    if ((currentTime - lastSunUpdate) !== 0 || !lastSunUpdate) {
-        localStorage.setItem(updateName, currentTime);
+        if (currentTime - lastSunUpdate !== 0 || !lastSunUpdate) {
+            localStorage.setItem(updateName, currentTime);
 
-        return true;
+            return true;
+        }
+
+        return false;
     }
 
-    return false;
-}
-
-export { isUpdateReady };
+    return { isUpdateReady };
+})();
