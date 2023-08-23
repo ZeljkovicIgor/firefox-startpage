@@ -1,6 +1,6 @@
 const { isDay } = sun;
 
-setRandomBackground();
+// setRandomBackground();
 
 function setRandomBackground() {
     var theme = isDay() ? "day" : "night";
@@ -10,4 +10,15 @@ function setRandomBackground() {
 
     body.style.background = `url('./backgrounds/${theme}/${randomBackgroundName}.gif')`;
     body.style.backgroundSize = "cover";
+}
+
+// TODO:
+// add css to popup when clicked
+// show it in a list not a table
+// add flicker on ones that have hierarchy
+
+function handleArrsClick() {
+    var arrsTable = document.getElementById("arrs-table");
+
+    arrsTable.style.display = "block";
 }

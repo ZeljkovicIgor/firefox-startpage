@@ -1,10 +1,15 @@
 html {
     background-color: #293048;
+    color: #fff;
 }
 
 body {
     font-family: "Jura", sans-serif;
     margin: 0;
+}
+
+#arrs-table {
+    display: none;
 }
 
 .main-table-container {
